@@ -11,6 +11,18 @@
   <p>
     Thank you for using and showing some ♥ for Nx.
   </p>
+
+  <cnd-accordion>
+    <cnd-accordion-panel *ngFor="let panel of panels" >
+      <cnd-accordion-header>
+        <h3>Header {{ panel }}</h3>
+      </cnd-accordion-header>
+      <div>
+        Panel {{ panel }}
+      </div>
+    </cnd-accordion-panel>
+  </cnd-accordion>
+
   <div class="flex github-star-container">
     <a
       href="https://github.com/nrwl/nx"

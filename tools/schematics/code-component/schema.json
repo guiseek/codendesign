@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "code-component",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do componente.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "O nome será usado na tag, pense semânticamente."
+    },
+    "exports": {
+      "description": "Exportar componente",
+      "type": "boolean",
+      "default": true
+    },
+    "story": {
+      "description": "Adicionar ao stockbook?",
+      "type": "boolean",
+      "alias": "s"
+    },
+    "sandbox": {
+      "description": "Adicionar um playground?",
+      "type": "boolean",
+      "alias": "s",
+      "x-prompt": "Esse componente possui variações?"
+    },
+    "changeDetection": {
+      "description": "Configurar detecção de mudanças.",
+      "x-prompt": "Pense em performance.",
+      "enum": ["Default", "OnPush"],
+      "type": "string",
+      "default": "Default",
+      "alias": "c"
+    },
+    "viewEncapsulation": {
+      "description": "Alterar encapsulamento de template.",
+      "enum": ["Emulated", "None"],
+      "type": "string",
+      "alias": "v"
+    },
+    "style": {
+      "description": "Manter pré-processador SCSS",
+      "type": "string",
+      "default": "scss",
+      "x-prompt": "Somente css, ganhamos em performance de build.",
+      "enum": [
+        "css",
+        "scss"
+      ]
+    },
+    "inlineStyle": {
+      "description": "Incorporar estilo ao componente",
+      "type": "boolean",
+      "alias": "s"
+    },
+    "inlineTemplate": {
+      "description": "Incorporar template ao componente",
+      "type": "boolean",
+      "alias": "t"
+    },
+    "type": {
+      "type": "string",
+      "description": "Ajustar tipo do componente",
+      "default": "Component",
+      "x-prompt": "O nome do arquivo ficaria \"tipo.type.ts\"."
+    }
+  },
+  "required": ["name"]
+}
