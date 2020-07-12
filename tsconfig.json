@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cnd/core": ["libs/core/src/index.ts"]
+      "@cnd/core": ["libs/core/src/index.ts"],
+      "@cnd/data": ["libs/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
