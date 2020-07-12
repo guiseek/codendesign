@@ -31,6 +31,9 @@
     },
     "core": {
       "tags": ["scope:core", "type:util"]
+    },
+    "data": {
+      "tags": ["scope:data", "type:data-access"]
     }
   }
 }
