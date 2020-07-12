@@ -7,7 +7,7 @@ Após a implementação de qualquer um desses métodos, os usuários que executa
 > **NOTA:** Este exemplo assume que o projeto foi configurado para usar o Commitizen localmente.
 
 
-### Traditional git hooks
+### Ganchos tradicionais
 
 Altere `.git/hooks/prepare-commit-msg` com o seguinte trecho de código `bash`:
 
@@ -35,9 +35,10 @@ pois ele ainda não é um executável, este comando fornece a permissão para ex
 
 `chmod +x .git/hooks/prepare-commit-msg`
 
-👍
-
 ---
+
+### Agora ao executar o `git commit` serão apresentadas as perguntas sobre suas alterações.
+# 👍
 
 ### Husky
 
