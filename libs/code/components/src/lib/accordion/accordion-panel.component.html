@@ -1,0 +1,8 @@
+<header matRipple matRippleColor="#14305530" (click)="toggle()">
+  <ng-content select="cnd-accordion-header"></ng-content>
+  <i class="material-icons" [@indicatorRotate]="expanded">keyboard_arrow_down</i>
+</header>
+
+<section [@bodyExpansion]="expanded" cdkAccordionItem>
+  <ng-content select="div"></ng-content>
+</section>

@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@cnd/core": ["libs/core/src/index.ts"],
-      "@cnd/data": ["libs/data/src/index.ts"]
+      "@cnd/data": ["libs/data/src/index.ts"],
+      "@cnd/code/components": ["libs/code/components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

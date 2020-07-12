@@ -1,9 +1,12 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CodeAccordionModule } from '@cnd/code/components';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule, CodeAccordionModule],
       declarations: [AppComponent],
     }).compileComponents();
   }));
