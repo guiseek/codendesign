@@ -1,0 +1,20 @@
+<mat-form-field [appearance]="appearance">
+  <mat-label *ngIf="label">{{ label }}</mat-label>
+  <ng-content select="matPrefix"></ng-content>
+  <input
+    matInput
+    [attr.type]="type"
+    [attr.disabled]="disabled"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+    [name]="formControlName"
+  />
+  <ng-content select="matSuffix"></ng-content>
+
+  <mat-hint>
+    <ng-content select="span"></ng-content>
+  </mat-hint>
+  <mat-error>
+    <ng-content select="em"></ng-content>
+  </mat-error>
+</mat-form-field>

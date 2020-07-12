@@ -1,12 +1,18 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CodeAccordionModule } from '@cnd/code/components';
+import { CodeAccordionModule, CodeFieldModule } from '@cnd/code/components';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, CodeAccordionModule],
+      imports: [
+        BrowserAnimationsModule,
+        CodeAccordionModule,
+        CodeFieldModule,
+        ReactiveFormsModule
+      ],
       declarations: [AppComponent],
     }).compileComponents();
   }));
