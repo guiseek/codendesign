@@ -2,10 +2,13 @@
   "targets": {
     "gui-seek": {
       "hosting": {
-        "demo": [
-          "gui-seek"
+        "demo-storybook": [
+          "codendesign"
         ]
       }
     }
+  },
+  "projects": {
+    "default": "gui-seek"
   }
 }
