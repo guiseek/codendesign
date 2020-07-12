@@ -13,12 +13,17 @@
   </p>
 
   <cnd-accordion>
-    <cnd-accordion-panel *ngFor="let panel of panels" >
+    <cnd-accordion-panel *ngFor="let panel of panels">
       <cnd-accordion-header>
         <h3>Header {{ panel }}</h3>
       </cnd-accordion-header>
       <div>
         Panel {{ panel }}
+
+        <form [formGroup]="form">
+          <cnd-field label="Nome" formControlName="name"></cnd-field>
+          <span>{{ form.value | json }}</span>
+        </form>
       </div>
     </cnd-accordion-panel>
   </cnd-accordion>
