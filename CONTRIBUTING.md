@@ -1,4 +1,4 @@
-## Running Commitizen on git commit
+## Executando o Commitizen no git commit
 Demonstração de como incorporar o Commitizen no fluxo de trabalho existente do git commit usando ganchos do git e a opção da linha de comandos `--hook`. Isso é útil para os mantenedores do projeto que desejam seguir um padrão para mensagens de commit e  garantir que o formato de confirmação adequado seja aplicado às contribuições daqueles não familiarizados com o _Commitizen_.
 
 Após a implementação de qualquer um desses métodos, os usuários que executam `git commit` serão apresentados com uma sessão interativa do _Commitizen_ que os ajuda a escrever mensagens úteis em seus commits.
@@ -7,7 +7,7 @@ Após a implementação de qualquer um desses métodos, os usuários que executa
 > **NOTA:** Este exemplo assume que o projeto foi configurado para usar o Commitizen localmente.
 
 
-### Traditional git hooks
+### Ganchos tradicionais
 
 Altere `.git/hooks/prepare-commit-msg` com o seguinte trecho de código `bash`:
 
@@ -35,9 +35,10 @@ pois ele ainda não é um executável, este comando fornece a permissão para ex
 
 `chmod +x .git/hooks/prepare-commit-msg`
 
-👍
-
 ---
+
+### Agora ao executar o `git commit` serão apresentadas as perguntas sobre suas alterações.
+# 👍
 
 ### Husky
 
