@@ -1,4 +1,4 @@
-<header class="flex">
+<header class="flex" [cndPopoverOpen]="pop">
   <img
     alt="Nx logo"
     width="75"
@@ -6,6 +6,12 @@
   />
   <h1>Welcome to {{ title }}!</h1>
 </header>
+
+<ng-template #pop>
+  <form [formGroup]="form">
+    <cnd-field label="Nome" formControlName="name"></cnd-field>
+  </form>
+</ng-template>
 <main>
   <form [formGroup]="form">
     <mat-card>

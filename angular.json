@@ -277,18 +277,6 @@
       "sourceRoot": "libs/demo/storybook/src",
       "prefix": "cnd-storybook",
       "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/demo/storybook/tsconfig.lib.json",
-            "project": "libs/demo/storybook/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/demo/storybook/tsconfig.lib.prod.json"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
