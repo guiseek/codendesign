@@ -12,6 +12,7 @@ export class AppComponent {
   panels = [1,2,3,4,5];
 
   form = new FormGroup({
-    name: new FormControl('', Validators.required)
+    name: new FormControl('', Validators.required),
+    message: new FormControl('', Validators.required),
   })
 }
