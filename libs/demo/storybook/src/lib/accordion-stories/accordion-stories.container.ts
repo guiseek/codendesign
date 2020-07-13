@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'cnd-book-accordion-stories',
+  selector: 'cnd-storybook-accordion-stories',
   templateUrl: './accordion-stories.container.html',
   styleUrls: ['./accordion-stories.container.scss'],
 })

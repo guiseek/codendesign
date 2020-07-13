@@ -2,11 +2,8 @@ import {
   Component,
   ChangeDetectionStrategy,
   Input,
-  ContentChildren,
-  QueryList,
 } from '@angular/core';
 import { CdkAccordion } from '@angular/cdk/accordion';
-import { AccordionPanelComponent } from './accordion-panel.component';
 
 @Component({
   selector: 'cnd-accordion',
@@ -15,8 +12,4 @@ import { AccordionPanelComponent } from './accordion-panel.component';
 })
 export class AccordionComponent extends CdkAccordion {
   @Input() multi = true;
-
-  @ContentChildren(AccordionPanelComponent) panels: QueryList<
-    AccordionPanelComponent
-  >;
 }

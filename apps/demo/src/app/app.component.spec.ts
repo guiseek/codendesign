@@ -1,5 +1,6 @@
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CodeAccordionModule, CodeFieldModule } from '@cnd/code/components';
+import { CodeAccordionModule, CodeFieldModule, CodePopoverModule, CodeTextFieldModule } from '@cnd/code/components';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,8 +10,12 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule,
-        CodeAccordionModule,
+        MatCardModule,
         CodeFieldModule,
+        CodeAccordionModule,
+        CodeTextFieldModule,
+        CodeFieldModule,
+        CodePopoverModule,
         ReactiveFormsModule
       ],
       declarations: [AppComponent],

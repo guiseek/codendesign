@@ -1,4 +1,4 @@
-import { CodeAccordionModule, CodeFieldModule, CodeTextFieldModule } from '@cnd/code/components';
+import { CodeAccordionModule, CodeFieldModule, CodePopoverModule, CodeTextFieldModule } from '@cnd/code/components';
 import { DataModule } from '@cnd/data';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     CodeFieldModule,
     CodeTextFieldModule,
+    CodePopoverModule,
     CodeAccordionModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
