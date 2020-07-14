@@ -33,3 +33,8 @@ Using stored unhandled routes!.
         [33mdocument.querySelector('scully-content')[39m
         ----------------
         
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "[33mnpm run scully -- --scanRoutes[39m"
+----------------------------------

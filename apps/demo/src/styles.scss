@@ -1,18 +1,25 @@
-
 @import '~@angular/material/theming';
 @import '~@angular/cdk/overlay-prebuilt.css';
 
-
 @include mat-core();
 
-$demo-primary: mat-palette($mat-indigo);
-$demo-accent: mat-palette($mat-pink, A200, A100, A400);
+$demo-primary: mat-palette($mat-deep-purple);
+$demo-accent: mat-palette($mat-light-blue, A200, A100, A400);
 $demo-warn: mat-palette($mat-red);
 $demo-theme: mat-light-theme($demo-primary, $demo-accent, $demo-warn);
 
-
 @include angular-material-theme($demo-theme);
 
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  // font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.spacer {
+  flex: 1 1 auto;
+}

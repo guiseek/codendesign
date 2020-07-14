@@ -4,12 +4,12 @@ import {
   ViewEncapsulation,
   Style,
 } from '@schematics/angular/component/schema';
-import { join } from 'path';
 
 export interface ComponentSchema extends Schema {
   name: string;
   style: Style;
   type?: string;
+  doc?: boolean;
   story?: boolean;
   exports?: boolean;
   module?: string;
@@ -24,6 +24,7 @@ export const defaultSchema: ComponentSchema = {
   name: null,
   style: Style.Scss,
   prefix: 'cnd',
+  doc: false,
   story: false,
   exports: true,
   sandbox: false,
