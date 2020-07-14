@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -33,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'demo';
+  title = 'Code \'N Design';
 
   panels = [1,2,3,4,5];
 
@@ -44,11 +45,15 @@ export class AppComponent implements OnInit {
     name: new FormControl('', Validators.required),
     message: new FormControl('', Validators.required),
   });
-  topLevel$: Observable<ScullyRoute[]>;
+  navigation$: Observable<ScullyRoute[]>;
   constructor(
     private scully: ScullyRoutesService
   ) {
-    this.topLevel$ = this.scully.available$;
+    this.navigation$ = this.scully.available$.pipe(
+      map((allComponents) => {
+        return allComponents.filter(c => c.route.indexOf('/docs') === 0)
+      })
+    );
     this.dataSource = new CodeTableDataSource(ELEMENT_DATA);
   }
   ngOnInit() {

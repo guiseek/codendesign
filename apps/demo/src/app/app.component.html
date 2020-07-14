@@ -1,24 +1,11 @@
-<!-- <header class="flex">
-  <img
-    alt="Nx logo"
-    width="75"
-    src="https://nx.dev/assets/images/nx-logo-white.svg"
-  />
-  <h1>Welcome to {{ title }}!</h1>
-</header> -->
 <mat-toolbar color="primary">
-  <h1 class="mat-h1">Code 'N Design</h1>
+  <a mat-icon-button [routerLink]="['/']">
+    <mat-icon>home</mat-icon>
+  </a>
 
   <span class="spacer"></span>
 
-  <a
-    *ngFor="let top of topLevel$ | async"
-    color="accent"
-    mat-stroked-button
-    [routerLink]="[top.route]"
-    >{{ top.title }}</a
-  >
-  <a mat-stroked-button color="accent" [routerLink]="['/docs']">Docs</a>
+  <h1 class="mat-h1">{{ title }}</h1>
 
   <button type="button" mat-icon-button [cndPopoverOpen]="pop">
     <mat-icon>account_circle</mat-icon>
@@ -31,7 +18,23 @@
   </form> -->
 </ng-template>
 
-<router-outlet></router-outlet>
+<main role="main">
+  <nav>
+    <mat-nav-list>
+      <a
+        color="accent"
+        mat-list-item
+        *ngFor="let nav of navigation$ | async"
+        [routerLink]="[nav.route]"
+        >{{ nav.title }}</a
+      >
+    </mat-nav-list>
+  </nav>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</main>
+
 
 <!-- <h1>Table</h1>
 <cnd-table
