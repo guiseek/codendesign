@@ -1,0 +1,49 @@
+@import 'design/scss/mixins';
+
+cnd-row, cnd-header-row, cnd-footer-row {
+  display: flex;
+}
+
+cnd-cell, cnd-header-cell, cnd-footer-cell {
+  flex: 1;
+}
+
+
+cnd-table {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: auto;
+  width: 100%;
+
+  @include resp(xsmall) {
+    cnd-header-row {
+      padding: 2%;
+    }
+
+    cnd-cell {
+      padding: 2%;
+    }
+  }
+
+  cnd-header-row {
+    line-height: 1.5;
+    padding: 8px;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  cnd-cell {
+    border-top: 1px dashed lighten($primary, 60%);
+    line-height: 1.5;
+    padding: 8px;
+    vertical-align: top;
+  }
+
+  &.cnd-table-hover cnd-row:hover {
+    color: $secondary;
+  }
+
+  &.cnd-table-alternating tbody tr:nth-of-type(even) {
+    color: lighten($primary, 25%);
+  }
+}

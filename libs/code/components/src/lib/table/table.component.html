@@ -1,0 +1,43 @@
+<cdk-table [dataSource]="dataSource">
+  <ng-content></ng-content>
+
+  <ng-container cndColumnDef="select">
+    <cnd-header-cell *cndHeaderCellDef>
+      <input
+        type="checkbox"
+        (change)="$event ? masterToggle() : null"
+        [checked]="selection?.hasValue() && isAllSelected()"
+      />
+      <!-- <cdk-checkbox
+        (change)="$event ? masterToggle() : null"
+        [checked]="selection?.hasValue() && isAllSelected()"
+        [indeterminate]="selection?.hasValue() && !isAllSelected()"
+        [aria-label]="checkboxLabel()"
+      >
+      </cdk-checkbox> -->
+    </cnd-header-cell>
+    <cnd-cell *cndCellDef="let row">
+      <input
+        type="checkbox"
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection?.isSelected(row)"
+        [attr.aria-label]="checkboxLabel(row)"
+      />
+      <!-- <cdk-checkbox
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection?.isSelected(row)"
+        [aria-label]="checkboxLabel(row)"
+      >
+      </cdk-checkbox> -->
+    </cnd-cell>
+  </ng-container>
+
+  <cnd-header-row *cndHeaderRowDef="columns"></cnd-header-row>
+  <cnd-row
+    *cndRowDef="let row; columns: columns"
+    (click)="rowClick.emit({ origin: 'row', data: row })"
+  ></cnd-row>
+
+</cdk-table>
