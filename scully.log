@@ -1,0 +1,10 @@
+
+        ----------------
+        Error, missing "[33m<scully-content>[39m" in route "[33m/docs/___UNPUBLISHED___kclbrt4f_3ZZKEAha4K7XlKnc4oX4ad8oiX3EL4Sj[39m"
+        without <scully-content> we can not render this route.
+        Make sure it is in there, and not inside any conditionals (*ngIf)
+        You can check this by opening "[33mhttp://localhost:4200//docs/___UNPUBLISHED___kclbrt4f_3ZZKEAha4K7XlKnc4oX4ad8oiX3EL4Sj[39m"
+        when you serve your app with [33mng serve[39m and then in the browsers console run:
+        [33mdocument.querySelector('scully-content')[39m
+        ----------------
+        

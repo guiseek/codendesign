@@ -8,12 +8,15 @@ import { AppComponent } from './app.component';
 import { firebaseConfig } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    RouterModule.forRoot([{ path: 'docs', loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule) }]),
     DataModule,
     MatCardModule,
     CodeTableModule,
@@ -22,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CodePopoverModule,
     CodeAccordionModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent],
