@@ -1,6 +1,8 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CodeTableDataSource } from '@cnd/code/components';
+import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
 
 
 
@@ -42,8 +44,11 @@ export class AppComponent implements OnInit {
     name: new FormControl('', Validators.required),
     message: new FormControl('', Validators.required),
   });
-
-  constructor() {
+  topLevel$: Observable<ScullyRoute[]>;
+  constructor(
+    private scully: ScullyRoutesService
+  ) {
+    this.topLevel$ = this.scully.available$;
     this.dataSource = new CodeTableDataSource(ELEMENT_DATA);
   }
   ngOnInit() {

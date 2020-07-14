@@ -9,6 +9,11 @@ interface Demo {
   flat: boolean;
 }
 
+interface Doc {
+  name: string;
+  target: string;
+}
+
 function demoPath(demo: 'playground' | 'storybook', name: string) {
   return join('libs', 'demo', demo, 'src', 'lib', name);
 }
@@ -34,6 +39,10 @@ function storybook(name: string) {
   return { name, flat: true, path: demoPath('storybook', name) };
 }
 
+function scully(name: string): Doc {
+  return { name, target: 'docs' };
+}
+
 function mergeSchema(schema: ComponentSchema) {
   return { ...defaultSchema, ...schema };
 }
@@ -43,7 +52,7 @@ function createModule(options: Partial<ComponentSchema>): Rule {
 }
 
 function createComponent(options: ComponentSchema): Rule {
-  return externalSchematic('@schematics/angular', 'component', options);
+  return externalSchematic('@ngneat/spectator', 'spectator-component', options);
 }
 
 function createPlayground(options: Demo) {
@@ -55,6 +64,10 @@ function createStorybook(options: Demo) {
     template:
       './__path__/__name@dasherize@if-flat__/__name@dasherize__.component.stories.ts.template',
   });
+}
+
+function createScully(options: Doc) {
+  return externalSchematic('@scullyio/init', 'post', options);
 }
 
 export default function (schema: ComponentSchema): Rule {
@@ -69,6 +82,9 @@ export default function (schema: ComponentSchema): Rule {
   }
   if (options.story) {
     schematics.push(createStorybook(storybook(options.name)));
+  }
+  if (options.doc) {
+    schematics.push(createScully(scully(options.name)));
   }
 
   return chain(schematics);
