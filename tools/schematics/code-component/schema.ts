@@ -12,6 +12,7 @@ export interface ComponentSchema extends Schema {
   type?: string;
   story?: boolean;
   exports?: boolean;
+  module?: string;
   sandbox?: boolean;
   inlineStyle?: boolean;
   inlineTemplate?: boolean;
