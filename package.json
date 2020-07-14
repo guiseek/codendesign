@@ -31,7 +31,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "cmt": "git-cz"
+    "cmt": "git-cz",
+    "playground": "angular-playground"
   },
   "private": true,
   "dependencies": {
@@ -73,6 +74,7 @@
     "@types/jest": "25.1.4",
     "@types/lodash": "^4.14.157",
     "@types/node": "~8.9.4",
+    "angular-playground": "^7.0.3",
     "codelyzer": "~5.0.1",
     "cypress": "^4.1.0",
     "cz-conventional-changelog": "^3.2.0",
