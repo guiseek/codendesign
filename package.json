@@ -32,6 +32,7 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "cmt": "git-cz",
+    "local-registry": "./scripts/local-registry.sh",
     "playground": "angular-playground"
   },
   "private": true,
