@@ -33,7 +33,9 @@
     "help": "nx help",
     "cmt": "git-cz",
     "local-registry": "./scripts/local-registry.sh",
-    "playground": "angular-playground"
+    "playground": "angular-playground",
+    "scully": "scully",
+    "scully:serve": "scully serve"
   },
   "private": true,
   "dependencies": {
@@ -49,6 +51,9 @@
     "@angular/platform-browser-dynamic": "^9.1.0",
     "@angular/router": "^9.1.0",
     "@nrwl/angular": "9.5.1",
+    "@scullyio/init": "0.0.29",
+    "@scullyio/ng-lib": "latest",
+    "@scullyio/scully": "latest",
     "cz-customizable": "^6.2.1",
     "firebase": "^7.13.1",
     "lodash": "^4.17.19",
