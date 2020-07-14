@@ -1,11 +1,11 @@
-# path to a directory with all packages
+# caminho para um diretório com todos os pacotes
 storage: ../build/local-registry/storage
 
 auth:
   htpasswd:
     file: ./htpasswd
 
-# a list of other known repositories we can talk to
+# uma lista de outros repositórios conhecidos com os quais podemos conversar
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
@@ -16,24 +16,25 @@ uplinks:
 
 packages:
   '@*/*':
-    # scoped packages
+    # pacotes com escopo
     access: $all
     publish: $all
     unpublish: $all
     proxy: npmjs
 
   '**':
-    # allow all users (including non-authenticated users) to read and
-    # publish all packages
+    # permite todos usuários (incluindo usuários não autenticados)
+    # para ler e publicar todos os pacotes
     access: $all
 
-    # allow all users (including non-authenticated users) to publish/publish packages
+    # permite todos usuários (incluindo usuários não autenticados)
+    # a publicar e despublicar pacotes
     publish: $all
     unpublish: $all
 
-    # if package is not available locally, proxy requests to 'yarn' registry
+    # se o pacote não estiver disponível localmente, solicitações de proxy para o registro 'yarn'
     proxy: npmjs
 
-# log settings
+# configurações de log
 logs:
   - { type: stdout, format: pretty, level: http }
