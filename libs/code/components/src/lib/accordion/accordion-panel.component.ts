@@ -1,8 +1,16 @@
+import { Subject } from 'rxjs';
+import { AccordionButtonDirective } from './accordion-button.directive';
 import {
   Component,
   Input,
   ChangeDetectionStrategy,
   ViewEncapsulation,
+  ContentChild,
+  AfterViewInit,
+  Output,
+  EventEmitter,
+  OnDestroy,
+  AfterContentInit,
 } from '@angular/core';
 import {
   trigger,
@@ -11,10 +19,12 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { CdkAccordionItem } from '@angular/cdk/accordion';
+import { takeUntil } from 'rxjs/operators';
+
+let NEXT_ID = 0;
 
 @Component({
-  selector: 'cnd-accordion-panel',
+  selector: '[cnd-accordion-panel], cnd-accordion-panel',
   templateUrl: './accordion-panel.component.html',
   styleUrls: ['./accordion-panel.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -30,8 +40,34 @@ import { CdkAccordionItem } from '@angular/cdk/accordion';
       transition('true <=> false', animate('300ms ease-in-out')),
     ]),
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class AccordionPanelComponent extends CdkAccordionItem {
+export class AccordionPanelComponent
+  implements AfterContentInit, AfterViewInit, OnDestroy {
+  public id = `sect${NEXT_ID++}`;
+  public labelledby = `accordion${this.id}id`;
+
   @Input() expanded: boolean;
+  @ContentChild(AccordionButtonDirective)
+  public button: AccordionButtonDirective;
+
+  destroy$ = new Subject<void>();
+  @Output() expandedChange = new EventEmitter<boolean>();
+
+  ngAfterContentInit() {
+    if (this.button) {
+      this.button.controls = this.id;
+      this.button.id = this.labelledby;
+    }
+  }
+
+  ngAfterViewInit() {
+    this.button.expandedChange
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(this.expandedChange);
+  }
+
+  ngOnDestroy() {
+    this.destroy$.complete();
+  }
 }

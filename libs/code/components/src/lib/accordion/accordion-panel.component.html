@@ -1,8 +1,12 @@
-<header matRipple matRippleColor="#14305530" (click)="toggle()">
-  <ng-content select="cnd-accordion-header"></ng-content>
-  <i class="material-icons" [@indicatorRotate]="expanded">keyboard_arrow_down</i>
+<header matRipple matRippleColor="#673ab72b" [matRippleDisabled]="!!button?.disabled">
+  <ng-content select="h1,h2,h3,h4,h5,h6"></ng-content>
+  <i class="material-icons" [@indicatorRotate]="button.expanded"
+    >keyboard_arrow_down</i
+  >
 </header>
-
-<section [@bodyExpansion]="expanded">
-  <ng-content select="div"></ng-content>
+<section
+  [attr.aria-labelledby]="labelledby"
+  [@bodyExpansion]="button.expanded"
+>
+  <ng-content></ng-content>
 </section>

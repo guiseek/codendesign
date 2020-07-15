@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordionHeaderComponent } from './accordion-header.component';
+import { DemosComponent } from './demos.component';
 
-describe('AccordionHeaderComponent', () => {
-  let component: AccordionHeaderComponent;
-  let fixture: ComponentFixture<AccordionHeaderComponent>;
+describe('DemosComponent', () => {
+  let component: DemosComponent;
+  let fixture: ComponentFixture<DemosComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AccordionHeaderComponent ]
+      declarations: [ DemosComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccordionHeaderComponent);
+    fixture = TestBed.createComponent(DemosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

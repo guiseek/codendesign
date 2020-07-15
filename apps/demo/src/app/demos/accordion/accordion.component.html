@@ -1,0 +1,8 @@
+<cnd-accordion>
+  <cnd-accordion-panel *ngFor="let panel of panels">
+    <h2>
+      <button cnd-accordion-button [disabled]="panel.disabled">{{ panel.header }}</button>
+    </h2>
+    <p>{{ panel.content }}</p>
+  </cnd-accordion-panel>
+</cnd-accordion>
