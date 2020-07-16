@@ -33,7 +33,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'demo';
+  title = 'Code \'N Design';
 
   panels = [1,2,3,4,5];
 

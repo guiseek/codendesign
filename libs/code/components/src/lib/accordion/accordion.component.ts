@@ -6,7 +6,7 @@ import {
 import { CdkAccordion } from '@angular/cdk/accordion';
 
 @Component({
-  selector: 'cnd-accordion',
+  selector: 'cnd-accordion, [cnd-accordion]',
   template: `<ng-content select="cnd-accordion-panel"></ng-content>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

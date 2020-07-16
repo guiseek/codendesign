@@ -32,6 +32,11 @@ import { MatButtonModule } from '@angular/material/button';
         loadChildren: () =>
           import('./docs/docs.module').then((m) => m.DocsModule),
       },
+      {
+        path: 'demos',
+        loadChildren: () =>
+          import('./demos/demos.module').then((m) => m.DemosModule),
+      },
     ]),
     DataModule,
     MatCardModule,
