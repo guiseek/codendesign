@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AccordionStoriesContainer } from './accordion-stories/accordion-stories.container';
 import { DemoStorybookShell } from './storybook.shell';
 import { TableComponent } from './table/table.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { TableComponent } from './table/table.component';
   declarations: [
     AccordionStoriesContainer,
     DemoStorybookShell,
-    TableComponent
+    TableComponent,
+    DialogComponent
   ],
   exports: [
     DemoStorybookShell

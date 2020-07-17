@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cnd-demos-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss']
 })

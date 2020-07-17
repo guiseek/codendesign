@@ -1,11 +1,3 @@
-<!-- <header class="flex">
-  <img
-    alt="Nx logo"
-    width="75"
-    src="https://nx.dev/assets/images/nx-logo-white.svg"
-  />
-  <h1>Welcome to {{ title }}!</h1>
-</header> -->
 <mat-toolbar color="primary">
   <h1 class="mat-h1">Welcome to {{ title }}!</h1>
 
@@ -35,38 +27,7 @@
 
 <router-outlet></router-outlet>
 
-<!-- <h1>Table</h1>
-<cnd-table
-  class="cnd-table-hover"
-  [columns]="displayedColumns"
-  [dataSource]="dataSource"
->
-
-  <ng-container cndColumnDef="position">
-    <cnd-header-cell *cndHeaderCellDef> No. </cnd-header-cell>
-    <cnd-cell *cndCellDef="let element"> {{ element.position }} </cnd-cell>
-  </ng-container>
-
-
-  <ng-container cndColumnDef="name">
-    <cnd-header-cell *cndHeaderCellDef> Name </cnd-header-cell>
-    <cnd-cell *cndCellDef="let element"> {{ element.name }} </cnd-cell>
-  </ng-container>
-
-
-  <ng-container cndColumnDef="weight">
-    <cnd-header-cell *cndHeaderCellDef> Weight </cnd-header-cell>
-    <cnd-cell *cndCellDef="let element"> {{ element.weight }} </cnd-cell>
-  </ng-container>
-
-
-  <ng-container cndColumnDef="symbol">
-    <cnd-header-cell *cndHeaderCellDef> Symbol </cnd-header-cell>
-    <cnd-cell *cndCellDef="let element"> {{ element.symbol }} </cnd-cell>
-  </ng-container>
-
-</cnd-table>
-
+<!--
 <main>
   <form [formGroup]="form">
     <mat-card>
