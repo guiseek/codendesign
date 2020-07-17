@@ -1,20 +1,20 @@
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { <%= classify(name) %>Module, <%= classify(name) %>Component } from '@cnd/code/components';
+import { DialogModule, DialogComponent } from '@cnd/code/components';
 
 export default {
-  title: '<%= classify(name) %>Component',
+  title: 'DialogComponent',
   moduleMetadata: {
     imports: [
-      <%= classify(name) %>Module
+      DialogModule
     ],
   },
-  component: <%= classify(name) %>Component,
+  component: DialogComponent,
   template: `
-    <<%= selector %>>
+    <cnd-dialog>
 
-    </<%= selector %>>
+    </cnd-dialog>
   `,
   props: {
     label: text('Label', 'Nome'),

@@ -1,0 +1,20 @@
+cnd-dialog {
+  background: white;
+  border-radius: 5px;
+  display: block;
+  // padding: 10px;
+  width: 100%;
+  overflow: hidden;
+  outline: 0;
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+  }
+}
+.no-padding :host {
+  padding: 10px;
+}
+

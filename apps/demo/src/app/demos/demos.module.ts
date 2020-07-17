@@ -1,27 +1,48 @@
-import { CodeAccordionModule } from '@cnd/code/components';
+import {
+  CodeAccordionModule,
+  CodeFieldModule,
+  CodePopoverModule,
+  CodeTextFieldModule,
+  CodeTableModule,
+  CodeDialogModule,
+} from '@cnd/code/components';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
 
 import { DemosRoutingModule } from './demos-routing.module';
 import { DemosComponent } from './demos.component';
 import { AccordionComponent } from './accordion/accordion.component';
-import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
-
-const routes: Routes = [
-  { path: '', component: DemosComponent }
-];
+import { DialogComponent } from './dialog/dialog.component';
+import { PopoverComponent } from './popover/popover.component';
+import { TableComponent } from './table/table.component';
+import { SelectComponent } from './select/select.component';
+import { FieldComponent } from './field/field.component';
+import { TextFieldComponent } from './text-field/text-field.component';
 
 @NgModule({
-  declarations: [DemosComponent, AccordionComponent],
+  declarations: [
+    DemosComponent,
+    AccordionComponent,
+    DialogComponent,
+    PopoverComponent,
+    TableComponent,
+    SelectComponent,
+    FieldComponent,
+    TextFieldComponent,
+  ],
   imports: [
     CommonModule,
+    MatTabsModule,
     MatButtonModule,
-    MatDividerModule,
+    CodeDialogModule,
     CodeAccordionModule,
+    CodeFieldModule,
+    CodePopoverModule,
+    CodeTextFieldModule,
+    CodeTableModule,
     DemosRoutingModule,
-    RouterModule.forChild(routes)
-  ]
+  ],
 })
-export class DemosModule { }
+export class DemosModule {}
