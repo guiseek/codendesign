@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
 
-import { BaseEntity } from '../models/base-entity.model';
+import { BaseEntity } from '@cnd/domain';
 
 export interface Repository<T extends BaseEntity> {
   getById(id: string): Observable<T>;

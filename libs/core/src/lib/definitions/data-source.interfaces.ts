@@ -1,5 +1,5 @@
 import { ApiConfig, EntityServiceConfig, CustomServiceConfig } from './config.interfaces';
-import { BaseEntity } from '../models/base-entity.model';
+import { BaseEntity } from '@cnd/domain';
 
 export interface DataSource {
   config?: ApiConfig;

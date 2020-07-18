@@ -1,6 +1,5 @@
 import { BaseEntity } from './base-entity.model';
-import { Entity } from '../decorators/entity.decorator';
-import { Attribute } from '../decorators/attribute.decorator';
+import { Entity, Attribute } from '@cnd/core';
 
 const FIRST_NAME = 'John';
 const LAST_NAME = 'Smith';

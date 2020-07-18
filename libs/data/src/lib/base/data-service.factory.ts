@@ -2,12 +2,11 @@ import { RestApiRepository } from './../infrastructure/rest-api.repository';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
-  BaseEntity,
-  FirebaseEntity,
   Repository,
   DataSource,
   DataSourceType,
 } from '@cnd/core';
+import { FirebaseEntity, BaseEntity } from '@cnd/domain';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';

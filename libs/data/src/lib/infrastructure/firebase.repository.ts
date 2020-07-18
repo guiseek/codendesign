@@ -4,7 +4,8 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import * as _ from 'lodash';
 import { Observable, Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FirebaseEntity, Repository } from '@cnd/core';
+import { Repository } from '@cnd/core';
+import { FirebaseEntity } from '@cnd/domain';
 
 @Injectable()
 export class FirebaseRepository<T extends FirebaseEntity>

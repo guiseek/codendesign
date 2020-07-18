@@ -49,6 +49,9 @@
     },
     "demo-playground": {
       "tags": ["scope:demo", "type:ui"]
+    },
+    "domain": {
+      "tags": ["scope:data", "type:data-access"]
     }
   }
 }

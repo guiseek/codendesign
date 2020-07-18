@@ -1,5 +1,5 @@
 import { FirestoreRepository } from './firestore.repository';
-import { FirebaseEntity } from '@cnd/core';
+import { FirebaseEntity } from '@cnd/domain';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 const mockEntity = new FirebaseEntity();

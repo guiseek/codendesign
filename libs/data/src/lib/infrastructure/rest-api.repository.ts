@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { BaseEntity, Repository, DataSource, ApiConfig } from '@cnd/core';
+import { BaseEntity } from '@cnd/domain';
+import { Repository, DataSource, ApiConfig } from '@cnd/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()

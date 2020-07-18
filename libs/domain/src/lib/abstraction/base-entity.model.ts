@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { EntityAttribute } from '../decorators/attribute.decorator';
+import { EntityAttribute } from '@cnd/core';
 
 export class BaseEntity {
   attributes: Array<EntityAttribute>;
