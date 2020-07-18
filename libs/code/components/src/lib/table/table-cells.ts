@@ -1,5 +1,5 @@
 import { BooleanInput } from '@angular/cdk/coercion';
-import { Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Input, HostBinding } from '@angular/core';
 import {
   CdkCell,
   CdkCellDef,
@@ -42,28 +42,27 @@ export class CodeFooterCellDef extends CdkFooterCellDef {}
  */
 @Directive({
   selector: '[cndColumnDef]',
-  inputs: ['sticky'],
   providers: [
     { provide: CdkColumnDef, useExisting: CodeColumnDef },
     { provide: 'MAT_SORT_HEADER_COLUMN_DEF', useExisting: CodeColumnDef },
   ],
 })
 export class CodeColumnDef extends CdkColumnDef {
+  static ngAcceptInputType_sticky: BooleanInput;
+
   /** Unique name for this column. */
   @Input('cndColumnDef') name: string;
 
-  static ngAcceptInputType_sticky: BooleanInput;
+  @Input() sticky: boolean;
 }
 
 /** Header cell template container that adds the right classes and role. */
 @Directive({
   selector: 'cnd-header-cell, th[cnd-header-cell]',
-  host: {
-    class: 'cnd-header-cell',
-    role: 'columnheader',
-  },
 })
 export class CodeHeaderCell extends CdkHeaderCell {
+  @HostBinding('class') class = 'cnd-header-cell';
+  @HostBinding('attr.role') role = 'columnheader';
   constructor(columnDef: CdkColumnDef, elementRef: ElementRef<HTMLElement>) {
     super(columnDef, elementRef);
     elementRef.nativeElement.classList.add(
@@ -75,12 +74,10 @@ export class CodeHeaderCell extends CdkHeaderCell {
 /** Footer cell template container that adds the right classes and role. */
 @Directive({
   selector: 'cnd-footer-cell, td[cnd-footer-cell]',
-  host: {
-    class: 'cnd-footer-cell',
-    role: 'gridcell',
-  },
 })
 export class CodeFooterCell extends CdkFooterCell {
+  @HostBinding('class') class = 'cnd-footer-cell';
+  @HostBinding('attr.role') role = 'gridcell';
   constructor(columnDef: CdkColumnDef, elementRef: ElementRef) {
     super(columnDef, elementRef);
     elementRef.nativeElement.classList.add(
@@ -92,12 +89,10 @@ export class CodeFooterCell extends CdkFooterCell {
 /** Cell template container that adds the right classes and role. */
 @Directive({
   selector: 'cnd-cell, td[cnd-cell]',
-  host: {
-    class: 'cnd-cell',
-    role: 'gridcell',
-  },
 })
 export class CodeCell extends CdkCell {
+  @HostBinding('class') class = 'cnd-cell';
+  @HostBinding('attr.role') role = 'gridcell';
   constructor(columnDef: CdkColumnDef, elementRef: ElementRef<HTMLElement>) {
     super(columnDef, elementRef);
     elementRef.nativeElement.classList.add(

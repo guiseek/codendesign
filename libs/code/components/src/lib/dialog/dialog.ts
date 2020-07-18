@@ -172,7 +172,7 @@ export class Dialog implements OnDestroy {
     });
 
     const dialogCloseSub = dialogRef.afterClosed().subscribe(() => {
-      let dialogIndex = this._openDialogs.indexOf(dialogRef);
+      const dialogIndex = this._openDialogs.indexOf(dialogRef);
 
       if (dialogIndex > -1) {
         this._openDialogs.splice(dialogIndex, 1);

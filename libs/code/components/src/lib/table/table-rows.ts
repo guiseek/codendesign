@@ -13,6 +13,7 @@ import {
   Component,
   Directive,
   ViewEncapsulation,
+  HostBinding,
 } from '@angular/core';
 
 /**
@@ -63,10 +64,6 @@ export class CodeRowDef<T> extends CdkRowDef<T> {}
 @Component({
   selector: 'cnd-header-row, tr[cnd-header-row]',
   template: CDK_ROW_TEMPLATE,
-  host: {
-    class: 'cnd-header-row',
-    role: 'row',
-  },
   // Veja a nota no CdkTable para obter uma explicação sobre por que
   // isso usa a estratégia de detecção de alterações padrão.
   // tslint: disable-next-line: validate-decorators
@@ -75,16 +72,15 @@ export class CodeRowDef<T> extends CdkRowDef<T> {}
   exportAs: 'cndHeaderRow',
   providers: [{ provide: CdkHeaderRow, useExisting: CodeHeaderRow }],
 })
-export class CodeHeaderRow extends CdkHeaderRow {}
+export class CodeHeaderRow extends CdkHeaderRow {
+  @HostBinding('class') class = 'cnd-header-row';
+  @HostBinding('attr.role') role = 'row';
+}
 
 /** Footer template container that contains the cell outlet. Adds the right class and role. */
 @Component({
   selector: 'cnd-footer-row, tr[cnd-footer-row]',
   template: CDK_ROW_TEMPLATE,
-  host: {
-    class: 'cnd-footer-row',
-    role: 'row',
-  },
   // Consulte a nota no CdkTable para obter uma explicação
   // sobre por que isso usa a estratégia de detecção de alterações padrão.
   // tslint:disable-next-line:validate-decorators
@@ -93,7 +89,10 @@ export class CodeHeaderRow extends CdkHeaderRow {}
   exportAs: 'cndFooterRow',
   providers: [{ provide: CdkFooterRow, useExisting: CodeFooterRow }],
 })
-export class CodeFooterRow extends CdkFooterRow {}
+export class CodeFooterRow extends CdkFooterRow {
+  @HostBinding('class') class = 'cnd-footer-row';
+  @HostBinding('attr.role') role = 'row';
+}
 
 /**
  * Contêiner de modelo de linha de dados que contém a saída da célula.
@@ -102,10 +101,6 @@ export class CodeFooterRow extends CdkFooterRow {}
 @Component({
   selector: 'cnd-row, tr[cnd-row]',
   template: CDK_ROW_TEMPLATE,
-  host: {
-    class: 'cnd-row',
-    role: 'row',
-  },
   // Consulte a nota no CdkTable para obter uma explicação sobre por que isso usa a estratégia de detecção de alterações padrão.
   // tslint:disable-next-line:validate-decorators
   changeDetection: ChangeDetectionStrategy.Default,
@@ -113,7 +108,10 @@ export class CodeFooterRow extends CdkFooterRow {}
   exportAs: 'cndRow',
   providers: [{ provide: CdkRow, useExisting: CodeRow }],
 })
-export class CodeRow extends CdkRow {}
+export class CodeRow extends CdkRow {
+  @HostBinding('class') class = 'cnd-row';
+  @HostBinding('attr.role') role = 'row';
+}
 
 /** Linha que pode ser usada para exibir uma mensagem quando nenhum dado é mostrado na tabela. */
 // @Directive({

@@ -2,7 +2,7 @@
   <a
     mat-tab-link
     *ngFor="let link of links"
-    [routerLink]="link"
+    [routerLink]="['/', link]"
     routerLinkActive
     #rla="routerLinkActive"
     [active]="rla.isActive"

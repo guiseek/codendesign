@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import {
   CodeAccordionModule,
   CodeFieldModule,
@@ -5,6 +6,7 @@ import {
   CodeTextFieldModule,
   CodeTableModule,
   CodeDialogModule,
+  CodeSelectModule,
 } from '@cnd/code/components';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -37,11 +39,13 @@ import { TextFieldComponent } from './text-field/text-field.component';
     MatTabsModule,
     MatButtonModule,
     CodeDialogModule,
+    CodeSelectModule,
     CodeAccordionModule,
     CodeFieldModule,
     CodePopoverModule,
     CodeTextFieldModule,
     CodeTableModule,
+    ReactiveFormsModule,
     DemosRoutingModule,
   ],
 })

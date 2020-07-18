@@ -1,1 +1,8 @@
-<p>select works!</p>
+<form [formGroup]="form">
+  <cnd-select formControlName="name" label="Select Component">
+    <cnd-option *ngFor="let item of options" [value]="item">
+      {{ item.viewValue }}
+    </cnd-option>
+  </cnd-select>
+</form>
+

@@ -27,4 +27,4 @@ import { ReactiveFormsModule } from '@angular/forms';
     OptionComponent
   ]
 })
-export class NxmSelectModule { }
+export class CodeSelectModule { }
