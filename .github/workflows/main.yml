@@ -31,39 +31,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Build and test
-      run: |
-        npm run affected:build:ci
-        npm run affected:test:ci
-    - name: Release semantico
-      run: npm run semantic:ci
-    env:
-      CI: true
-
-  firebase-deploy:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@master
-    - uses: actions/setup-node@master
-      with:
-        node-version: '10.x'
-    - uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Builds
+        run: |
+          npm run ng build code-components --prod
+          npm run ng build demo --prod
+      - name: Tests
+        run: |
+          npm run ng test code-components
+          npm run ng test demo
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: '10.x'
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

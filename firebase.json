@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "demo-storybook",
-      "public": "dist/demo/storybook",
+      "target": "demo",
+      "public": "dist/apps/demo",
       "ignore": [
         "**/.*"
       ],
