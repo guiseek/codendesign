@@ -28,14 +28,14 @@ import { MatButtonModule } from '@angular/material/button';
     AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot([
       {
+        path: '',
+        loadChildren: () =>
+          import('./demos/demos.module').then((m) => m.DemosModule),
+      },
+      {
         path: 'docs',
         loadChildren: () =>
           import('./docs/docs.module').then((m) => m.DocsModule),
-      },
-      {
-        path: 'demos',
-        loadChildren: () =>
-          import('./demos/demos.module').then((m) => m.DemosModule),
       },
     ]),
     DataModule,

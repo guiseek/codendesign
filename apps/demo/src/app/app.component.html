@@ -10,8 +10,6 @@
     [routerLink]="[top.route]"
     >{{ top.title }}</a
   >
-  <a mat-stroked-button color="accent" [routerLink]="['/demos']">Demos</a>
-
   <a mat-stroked-button color="accent" [routerLink]="['/docs']">Docs</a>
 
   <button type="button" mat-icon-button [cndPopoverOpen]="pop">
@@ -20,31 +18,6 @@
 </mat-toolbar>
 <ng-template #pop>
   <button mat-stroked-button>Login</button>
-  <!-- <form [formGroup]="form">
-    <cnd-field label="Nome" formControlName="name"></cnd-field>
-  </form> -->
 </ng-template>
 
 <router-outlet></router-outlet>
-
-<!--
-<main>
-  <form [formGroup]="form">
-    <mat-card>
-      <cnd-field label="Nome" formControlName="name"></cnd-field>
-
-      <cnd-text-field label="Nome" formControlName="message"></cnd-text-field>
-    </mat-card>
-  </form>
-
-  <mat-card>
-    <cnd-accordion>
-      <cnd-accordion-panel *ngFor="let panel of panels">
-        <cnd-accordion-header>
-          <h3>Header {{ panel }}</h3>
-        </cnd-accordion-header>
-        <div>Panel {{ panel }}</div>
-      </cnd-accordion-panel>
-    </cnd-accordion>
-  </mat-card>
-</main> -->

@@ -1,19 +1,21 @@
 cnd-accordion-panel {
   display: block;
+  border-radius: 4px;
   > header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    // [cnd-accordion-header] {
     h1, h2, h3, h4, h5, h6 {
       display: flex;
       width: 100%;
+      padding: 4px 6px;
       margin: 0;
 
       button {
+        cursor: pointer;
+        padding: 4px 6px;
         display: flex;
         flex: 1;
         background-color: transparent;
@@ -21,7 +23,6 @@ cnd-accordion-panel {
         font-size: inherit;
         font-weight: inherit;
       }
-      // }
     }
   }
   > section {

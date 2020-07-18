@@ -35,6 +35,7 @@ export class TextFieldComponent extends Field implements OnInit, OnDestroy {
 
   @ViewChild(TextFieldElementDirective) textFieldElement: TextFieldElementDirective;
 
+  @Input()
   public set minRows(value: number) {
     this._minRows = value;
   }
@@ -43,6 +44,7 @@ export class TextFieldComponent extends Field implements OnInit, OnDestroy {
   }
   private _minRows = 1;
 
+  @Input()
   public set maxRows(value: number) {
     this._maxRows = value;
   }

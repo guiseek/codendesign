@@ -1,1 +1,7 @@
-<p>text-field works!</p>
+<form [formGroup]="form">
+  <cnd-text-field
+    label="Nome"
+    [minRows]="10"
+    formControlName="message"
+  ></cnd-text-field>
+</form>

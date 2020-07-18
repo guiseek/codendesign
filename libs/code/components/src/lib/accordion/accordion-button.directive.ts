@@ -20,7 +20,9 @@ export class AccordionButtonDirective extends CdkAccordionItem {
   @HostBinding('attr.aria-controls')
   controls: string;
 
-  @Input() disabled: boolean;
+  @Input()
+  @HostBinding('disabled')
+  disabled: boolean;
 
   @HostListener('click')
   onClick() {
