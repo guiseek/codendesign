@@ -20,10 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { OverviewComponent } from './overview/overview.component';
 
 const routeConfig: Routes = [
   {
     path: '',
+    component: OverviewComponent
+  },
+  {
+    path: 'components',
     loadChildren: () =>
       import('./demos/demos.module').then((m) => m.DemosModule),
   },
@@ -35,7 +40,7 @@ const routeConfig: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, OverviewComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),

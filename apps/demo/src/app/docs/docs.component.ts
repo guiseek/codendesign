@@ -1,35 +1,36 @@
+import { DocsService } from './../shared/docs.service';
 import { Observable } from 'rxjs';
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ViewContainerRef, ComponentFactoryResolver, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import {ActivatedRoute, Router, ROUTES} from '@angular/router';
 import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
 import { map } from 'rxjs/operators';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 declare var ng: any;
 
 @Component({
   selector: 'cnd-docs',
   templateUrl: './docs.component.html',
-  styleUrls: ['./docs.component.css'],
+  styleUrls: ['./docs.component.scss'],
   preserveWhitespaces: true,
   encapsulation: ViewEncapsulation.Emulated
 
 })
-export class DocsComponent implements OnInit {
-
-  components$: Observable<ScullyRoute[]>;
-
-  ngOnInit() {}
+export class DocsComponent implements OnDestroy {
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private scully: ScullyRoutesService
+    public docs: DocsService,
+    public media: MediaMatcher,
+    public changeDetectorRef: ChangeDetectorRef
   ) {
-    this.components$ = this.scully.available$.pipe(
-      map((allComponents) => {
-        return allComponents.filter(c => c.route.indexOf('/docs') === 0)
-      })
-    );
-    this.scully.available$.subscribe(console.log)
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+  }
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 }

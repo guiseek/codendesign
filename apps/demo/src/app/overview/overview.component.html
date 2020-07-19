@@ -1,0 +1,16 @@
+<div role="doc-glossary">
+  <header role="doc-introduction">
+    <i class="material-icons">integration_instructions</i>
+    <h1>Demos & Docs</h1>
+  </header>
+
+  <section role="doc-toc">
+    <a *ngFor="let cmp of docs.components() | async" [routerLink]="[cmp.route]">
+      <mat-card>
+        <img mat-card-image src="/images/CodeNDesign.svg" alt="Logo Code 'N Design" />
+        <h3 mat-card-title>{{ cmp.title }}</h3>
+        <p mat-card-content>{{ cmp.description }}</p>
+      </mat-card>
+    </a>
+  </section>
+</div>

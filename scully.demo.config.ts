@@ -7,7 +7,8 @@ export const config: ScullyConfig = {
     '/docs/:selector': {
       type: 'contentFolder',
       selector: {
-        folder: "./docs"
+        folder: "./docs/components"
       }
-    },}
+    },
+  }
 };
