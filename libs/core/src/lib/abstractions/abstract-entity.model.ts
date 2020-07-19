@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 
-import { EntityAttribute } from '@cnd/core';
+import { EntityAttribute } from '../decorators/attribute.decorator';
 
-export class BaseEntity {
+export abstract class AbstractEntity<E = any> {
   attributes: Array<EntityAttribute>;
   entityName: string;
   id: any;
@@ -11,7 +11,7 @@ export class BaseEntity {
     this.entityName = (this as any).$$name;
   }
 
-  serialize(): any {
+  serialize<T = E>(): T {
     if (this.attributes === undefined) return undefined;
     const result: any = {};
     this.attributes.forEach((attr: EntityAttribute) => {
@@ -22,7 +22,7 @@ export class BaseEntity {
     return result;
   }
 
-  deserialize(target: any): BaseEntity {
+  deserialize<T = E>(target: any): AbstractEntity {
     if (this.attributes === undefined) return this;
 
     this.id = target.id;
@@ -38,8 +38,8 @@ export class BaseEntity {
       const targetValue = target[attr.options.serializedName];
 
       (this as any)[attr.name] = attr.options.isEntity
-        ? this.deserializeEntity((this as any)[attr.name], targetValue)
-        : this.isDate(targetValue)
+        ? this.deserializeEntity<T>((this as any)[attr.name], targetValue)
+        : this.isDate<T>(targetValue)
         ? new Date(targetValue)
         : targetValue;
     });
@@ -51,10 +51,10 @@ export class BaseEntity {
     return this.id === undefined;
   }
 
-  private deserializeEntity = (entity: any, data: any): any => {
+  private deserializeEntity = <T>(entity: any, data: any) => {
     if (entity === undefined || data === undefined) return undefined;
 
-    let result;
+    let result: T | T[];
     if (Array.isArray(data)) {
       const collection = [];
       for (const d in data)
@@ -72,7 +72,7 @@ export class BaseEntity {
     return result;
   };
 
-  private isDate = (field: any): boolean => {
+  private isDate = <T>(field: keyof T): boolean => {
     return (
       typeof field === 'string' &&
       field.indexOf('Z') !== -1 &&

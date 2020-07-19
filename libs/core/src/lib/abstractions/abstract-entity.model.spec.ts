@@ -1,4 +1,4 @@
-import { BaseEntity } from './base-entity.model';
+import { AbstractEntity } from './abstract-entity.model';
 import { Entity, Attribute } from '@cnd/core';
 
 const FIRST_NAME = 'John';
@@ -6,7 +6,7 @@ const LAST_NAME = 'Smith';
 const ENTITY_NAME = 'user';
 
 @Entity(ENTITY_NAME)
-class User extends BaseEntity {
+class User extends AbstractEntity {
   @Attribute({ serializedName: 'firstName' })
   name: string;
 

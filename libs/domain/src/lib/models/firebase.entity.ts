@@ -1,6 +1,6 @@
-import { BaseEntity } from '../abstraction/base-entity.model';
+import { AbstractEntity } from '@cnd/core';
 
-export class FirebaseEntity extends BaseEntity {
+export class FirebaseEntity extends AbstractEntity {
   name: string;
 
   private toRecord(): any {

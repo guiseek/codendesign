@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { BaseEntity } from '@cnd/domain';
+import { AbstractEntity } from '../abstractions/abstract-entity.model';
 
 /**
  * Interface configuração
@@ -32,7 +32,7 @@ export interface ApiConfig {
 
 export interface CustomServiceConfig {
   name: string;
-  entity: BaseEntity;
+  entity: AbstractEntity;
   service: any;
 }
 
@@ -47,6 +47,6 @@ export interface EntityServiceConfig {
    */
   name?: string;
 
-  entity: BaseEntity;
+  entity: AbstractEntity;
 }
 

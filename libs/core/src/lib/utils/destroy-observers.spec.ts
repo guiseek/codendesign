@@ -1,32 +1,25 @@
-import { SubscriptionDestroyerBase } from './subscription-destroyer-base';
+import { DestroyObservers } from './destroy-observers';
 import { of } from 'rxjs';
 
-class Component extends SubscriptionDestroyerBase {
+class Component extends DestroyObservers {
   observable = of([]);
 }
 
-describe('SubscriptionDestroyerBase', () => {
+describe('DestroyObservers', () => {
   let component: Component;
   beforeEach(() => {
     component = new Component();
   });
-  it('should create an instance', (done) => {
-    component.observable.subscribe((data) => {
-      expect(data.length).toBe(0);
-      done();
-    });
+
+  it('should create an instance', () => {
+    expect(new Component()).toBeTruthy();
   });
 
   it('should create two subscriptions and unsubscribe both times', () => {
-
     component.subs = component.observable.subscribe();
     component.subs = component.observable.subscribe();
-
     spyOn(component.$subs[0], 'unsubscribe');
-
     component.ngOnDestroy();
-
-    expect(component.$subs[0].unsubscribe).toHaveBeenCalledTimes(2);
-
+    expect(component.$subs.shift().unsubscribe).toHaveBeenCalledTimes(2);
   });
 });

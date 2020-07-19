@@ -27,6 +27,8 @@
                 "input": "design/images",
                 "output": "/images/"
               },
+              "apps/demo/src/robots.txt",
+              "apps/demo/src/sitemap.txt",
               "apps/demo/src/favicon.ico",
               "apps/demo/src/assets"
             ],
@@ -333,50 +335,6 @@
             "browserTarget": "playground:build",
             "port": 4201
           }
-        }
-      }
-    },
-    "demo-playground": {
-      "projectType": "library",
-      "root": "libs/demo/playground",
-      "sourceRoot": "libs/demo/playground/src",
-      "prefix": "cnd-playground",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/demo/playground/tsconfig.lib.json",
-            "project": "libs/demo/playground/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/demo/playground/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/demo/playground/tsconfig.lib.json",
-              "libs/demo/playground/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/demo/playground/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/demo/playground/jest.config.js",
-            "tsConfig": "libs/demo/playground/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/demo/playground/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
         }
       }
     },

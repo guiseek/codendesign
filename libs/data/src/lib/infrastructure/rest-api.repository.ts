@@ -1,32 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BaseEntity } from '@cnd/domain';
+import { AbstractEntity } from '@cnd/core';
 import { Repository, DataSource, ApiConfig } from '@cnd/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
-export class RestApiRepository<T extends BaseEntity>
-  implements Repository<BaseEntity> {
+export class RestApiRepository<T extends AbstractEntity>
+  implements Repository<AbstractEntity> {
 
   constructor(private dataSource?: DataSource, private http?: HttpClient) {
   }
 
-  getById(id: string): Observable<BaseEntity> {
+  getById(id: string): Observable<AbstractEntity> {
     throw new Error('Method not implemented.');
   }
-  getAll(): Observable<Array<BaseEntity>> {
+  getAll(): Observable<Array<AbstractEntity>> {
     throw new Error('Method not implemented.');
   }
-  find(): Observable<Array<BaseEntity>> {
+  find(): Observable<Array<AbstractEntity>> {
     throw new Error('Method not implemented.');
   }
-  create(entity: BaseEntity): Observable<BaseEntity> {
+  create(entity: AbstractEntity): Observable<AbstractEntity> {
     throw new Error('Method not implemented.');
   }
-  remove(entity: BaseEntity): Promise<void> {
+  remove(entity: AbstractEntity): Promise<void> {
     throw new Error('Method not implemented.');
   }
-  update(entity: BaseEntity): Promise<void> {
+  update(entity: AbstractEntity): Promise<void> {
     throw new Error('Method not implemented.');
   }
 }

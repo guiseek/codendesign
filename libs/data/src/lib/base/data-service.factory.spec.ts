@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { DataSource, DataSourceType } from '@cnd/core';
-import { BaseEntity } from '@cnd/domain';
+import { DataSource, DataSourceType, AbstractEntity } from '@cnd/core';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -25,7 +24,7 @@ describe('DataServiceFactory', () => {
       imports: [HttpClientTestingModule],
       providers: [
         DataServiceFactory,
-        { provide: BaseEntity, useFactory: baseEntityStub },
+        { provide: AbstractEntity, useFactory: baseEntityStub },
         { provide: DataSourceTest, useFactory: dataSourceStub },
         { provide: FirebaseApp, useFactory: firebaseAppStub },
         { provide: AngularFireDatabase, useFactory: angularFireDatabaseStub },
@@ -39,7 +38,7 @@ describe('DataServiceFactory', () => {
   });
   describe('create', () => {
     it('makes expected calls', () => {
-      const baseEntityStub: BaseEntity = TestBed.inject(BaseEntity);
+      const baseEntityStub: AbstractEntity = TestBed.inject(AbstractEntity);
       const dataSourceStub: DataSourceTest = TestBed.inject(DataSourceTest);
 
       spyOn(service, 'getDataSource');

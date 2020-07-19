@@ -1,6 +1,5 @@
 import { DataServiceFactory } from './data-service.factory';
-import { DataSource } from '@cnd/core';
-import { BaseEntity } from '@cnd/domain';
+import { DataSource, AbstractEntity } from '@cnd/core';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -17,11 +16,11 @@ export class DataContext {
           Array.isArray(dataSource.entities)
         ) {
           for (const item of dataSource.entities) {
-            let entity: BaseEntity;
+            let entity: AbstractEntity;
             let target: string;
 
-            if (item instanceof BaseEntity) {
-              entity = item as BaseEntity;
+            if (item instanceof AbstractEntity) {
+              entity = item as AbstractEntity;
               target = entity['$$name'];
             } else {
               entity = item.entity;

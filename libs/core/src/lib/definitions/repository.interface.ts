@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 
-import { BaseEntity } from '@cnd/domain';
+import { AbstractEntity } from '../abstractions/abstract-entity.model';
 
-export interface Repository<T extends BaseEntity> {
+export interface Repository<T extends AbstractEntity> {
   getById(id: string): Observable<T>;
 
   getAll(): Observable<Array<T>>;
