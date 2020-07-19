@@ -9,7 +9,9 @@
   margin: 0 auto;
 }
 .mat-toolbar {
+  z-index: 1;
   min-height: 56px;
+  position: fixed;
 }
 
 .mat-toolbar h1 {

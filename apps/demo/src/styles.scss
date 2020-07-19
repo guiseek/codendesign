@@ -1,5 +1,8 @@
 @import '~@angular/material/theming';
 @import '~@angular/cdk/overlay-prebuilt.css';
+@import '~prismjs/plugins/toolbar/prism-toolbar.css';
+@import '~prismjs/themes/prism-tomorrow';
+
 
 @include mat-core();
 
