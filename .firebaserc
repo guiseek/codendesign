@@ -4,6 +4,9 @@
       "hosting": {
         "demo": [
           "codendesign"
+        ],
+        "storybook": [
+          "codendesign-storybook"
         ]
       }
     }

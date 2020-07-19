@@ -1,7 +1,7 @@
 ---
 title: dialog
-description: blog description
-published: false
----
+description: 'blog description'
+published: true
 
+---
 # dialog

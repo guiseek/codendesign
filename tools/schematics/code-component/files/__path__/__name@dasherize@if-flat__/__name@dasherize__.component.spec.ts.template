@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
-describe('<%= classify(name) %>Component', () => {
-  let component: <%= classify(name) %>Component;
-  let fixture: ComponentFixture<<%= classify(name) %>Component>;
+describe('Code<%= classify(name) %>Component', () => {
+  let component: Code<%= classify(name) %>Component;
+  let fixture: ComponentFixture<Code<%= classify(name) %>Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ <%= classify(name) %>Component ],
+      declarations: [ Code<%= classify(name) %>Component ],
       imports: [
         CommonModule,
         BrowserAnimationsModule,
@@ -20,7 +20,7 @@ describe('<%= classify(name) %>Component', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(<%= classify(name) %>Component);
+    fixture = TestBed.createComponent(Code<%= classify(name) %>Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

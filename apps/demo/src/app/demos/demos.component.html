@@ -1,4 +1,49 @@
-<nav mat-tab-nav-bar>
+<!-- [mode]="mobileQuery.matches ? 'over' : 'side'" -->
+<div class="demos-container" [class.demos-is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="demos-sidenav-container">
+    <mat-sidenav
+      #snav
+      class="demos-sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <figure class="logo">
+        <img src="/images/CodeNDesign.svg" alt="" />
+      </figure>
+      <mat-nav-list>
+        <h3 mat-subheader>Componentes</h3>
+        <a
+          mat-list-item
+          routerLinkActive
+          *ngFor="let link of links"
+          [routerLink]="['/', link]"
+          >{{ link }}</a
+        >
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="demos-container scrollbar" role="doc-example">
+      <button
+        type="button"
+        *ngIf="snav"
+        mat-icon-button
+        class="nav-toggler"
+        [attr.aria-label]="snav.opened ? 'Fechar navegação' : 'Abrir navegação'"
+        (click)="snav.toggle()"
+      >
+        <i class="material-icons" aria-label="Alterna icone da navegação">{{
+          snav.opened ? 'menu_open' : 'menu'
+        }}</i>
+      </button>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<!-- <nav mat-tab-nav-bar>
   <a
     mat-tab-link
     *ngFor="let link of links"
@@ -11,4 +56,6 @@
   </a>
 </nav>
 
-<router-outlet></router-outlet>
+<section role="doc-example">
+  <router-outlet></router-outlet>
+</section> -->

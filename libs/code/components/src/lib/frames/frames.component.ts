@@ -56,7 +56,7 @@ import {
   ]
 })
 
-export class FramesComponent implements OnInit {
+export class CodeFramesComponent implements OnInit {
   @Input() slides: Frames[] = [];
   @Input() animationType = AnimationType.Scale;
 

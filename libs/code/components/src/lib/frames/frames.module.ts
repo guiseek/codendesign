@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FramesComponent } from './frames.component';
+import { CodeFramesComponent } from './frames.component';
 
 
 @NgModule({
   declarations: [
-    FramesComponent,
+    CodeFramesComponent,
   ],
   imports: [
     CommonModule,
   ],
   exports: [
-    FramesComponent,
+    CodeFramesComponent,
   ],
 })
-export class FramesModule {}
+export class CodeFramesModule {}

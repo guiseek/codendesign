@@ -6,7 +6,6 @@ cnd-accordion-panel {
     justify-content: space-between;
     align-items: center;
     border-radius: 4px;
-    cursor: pointer;
     h1, h2, h3, h4, h5, h6 {
       display: flex;
       width: 100%;
@@ -14,7 +13,6 @@ cnd-accordion-panel {
       margin: 0;
 
       button {
-        cursor: pointer;
         padding: 4px 6px;
         display: flex;
         flex: 1;
@@ -22,6 +20,10 @@ cnd-accordion-panel {
         border: none;
         font-size: inherit;
         font-weight: inherit;
+        outline-color: #23272bab;
+        &:not(:disabled) {
+          cursor: pointer;
+        }
       }
     }
   }

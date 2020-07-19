@@ -1,21 +1,21 @@
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import { TableModule } from './table.module';
-import { TableComponent } from './table.component';
+import { CodeDialogContainer } from './dialog.container';
+import { CodeDialogModule } from './dialog.module';
 
 export default {
-  title: 'TableComponent',
+  title: 'DialogComponent',
   moduleMetadata: {
     imports: [
-      TableModule
+      CodeDialogModule
     ],
   },
-  component: TableComponent,
+  component: CodeDialogContainer,
   template: `
-    <cnd-table>
+    <cnd-dialog>
 
-    </cnd-table>
+    </cnd-dialog>
   `,
   props: {
     label: text('Label', 'Nome'),

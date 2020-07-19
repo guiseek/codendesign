@@ -1,8 +1,18 @@
-# Codendesign
+# Code 'N Design
+
+
+<p align="center"><img src="design/images/CodeNDesign.svg" width="450"></p>
+
+### C.N.D Exemplos
+- [Web App Demo](https://codendesign.web.app)
+- [Storybook](#) (_Em breve_)
+- [Playground](#) (_Em breve_)
+- [Stack Blitz](#) (_Em breve_)
+
+
+---
 
 This project was generated using [Nx](https://nx.dev).
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 

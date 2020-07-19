@@ -19,7 +19,6 @@
       "@cnd/core": ["libs/core/src/index.ts"],
       "@cnd/data": ["libs/data/src/index.ts"],
       "@cnd/code/components": ["libs/code/components/src/index.ts"],
-      "@cnd/demo/storybook": ["libs/demo/storybook/src/index.ts"],
       "@cnd/demo/playground": ["libs/demo/playground/src/index.ts"],
       "@cnd/domain": ["libs/domain/src/index.ts"]
     }

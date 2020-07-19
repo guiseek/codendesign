@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-import { FramesComponent } from './frames.component';
+import { CodeFramesComponent } from './frames.component';
 
-describe('FramesComponent', () => {
-  let component: FramesComponent;
-  let fixture: ComponentFixture<FramesComponent>;
+describe('CodeFramesComponent', () => {
+  let component: CodeFramesComponent;
+  let fixture: ComponentFixture<CodeFramesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FramesComponent ],
+      declarations: [ CodeFramesComponent ],
       imports: [
         CommonModule,
         BrowserAnimationsModule,
@@ -20,7 +20,7 @@ describe('FramesComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FramesComponent);
+    fixture = TestBed.createComponent(CodeFramesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

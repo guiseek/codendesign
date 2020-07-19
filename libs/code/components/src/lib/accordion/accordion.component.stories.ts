@@ -1,6 +1,6 @@
-import { DemoStorybookModule } from './../demo-storybook.module';
 import { text, number, boolean } from '@storybook/addon-knobs';
-import { AccordionStoriesContainer } from './accordion-stories.container';
+import { CodeAccordionModule } from './accordion.module';
+import { AccordionComponent } from './accordion.component';
 
 export default {
   title: 'Accordion'
@@ -9,10 +9,10 @@ export default {
 export const primary = () => ({
   moduleMetadata: {
     imports: [
-      DemoStorybookModule
+      CodeAccordionModule
     ]
   },
-  component: AccordionStoriesContainer,
+  component: AccordionComponent,
   props: {
     multi: boolean('multi', true),
   }
@@ -21,10 +21,10 @@ export const primary = () => ({
 export const expanded = () => ({
   moduleMetadata: {
     imports: [
-      DemoStorybookModule
+      CodeAccordionModule
     ]
   },
-  component: AccordionStoriesContainer,
+  component: AccordionComponent,
   props: {
     expanded: boolean('expanded', true),
   }

@@ -64,7 +64,7 @@ import {
   ]
 })
 
-export class <%= classify(name) %>Component implements OnInit {
+export class Code<%= classify(name) %>Component implements OnInit {
   @Input() slides: <%= classify(name) %>[] = [];
   @Input() animationType = AnimationType.Scale;
 

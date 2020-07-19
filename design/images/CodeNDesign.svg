@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="353" height="164" viewBox="0 0 353 164">
+  <g id="CodeNDesign" transform="translate(-80 -142)">
+    <text id="Code" stroke-linejoin="round" fill="#ffe03b" stroke="#23272b" stroke-linecap="round" transform="translate(84 270)" stroke-width="4" font-size="128" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="0" y="0">Code</tspan></text>
+    <g id="Design" transform="translate(10.618 90.625)">
+      <path id="Caminho_126" data-name="Caminho 126" d="M246.826,144.022a40.26,40.26,0,0,1-80.52,0c0-22.235,40.26-67.022,40.26-67.022S246.826,121.788,246.826,144.022Z" transform="translate(0 0)" fill="#414952"/>
+      <path id="Caminho_127" data-name="Caminho 127" d="M340.913,144.022c0-21.816-38.8-65.392-40.26-67.022l.047,107.281A40.259,40.259,0,0,0,340.913,144.022Z" transform="translate(-94.087 0)" fill="#23272b"/>
+      <path id="Caminho_128" data-name="Caminho 128" d="M259.4,259.858a30.856,30.856,0,1,1-61.711,0c0-17.041,7.972-23.848,30.856-11.658C252.123,260.76,259.4,242.817,259.4,259.858Z" transform="translate(-21.978 -115.559)" fill="#ffe000"/>
+      <path id="Caminho_129" data-name="Caminho 129" d="M331.618,274.389c0-17.03-7.267.878-30.809-11.633v42.488A30.855,30.855,0,0,0,331.618,274.389Z" transform="translate(-94.196 -130.09)" fill="#ffb13b"/>
+    </g>
+  </g>
+</svg>

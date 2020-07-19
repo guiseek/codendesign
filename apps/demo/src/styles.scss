@@ -3,8 +3,10 @@
 
 @include mat-core();
 
-$demo-primary: mat-palette($mat-deep-purple);
-$demo-accent: mat-palette($mat-light-blue, A200, A100, A400);
+@import 'design/scss/palettes/codendesign.scss';
+
+$demo-primary: mat-palette($code);
+$demo-accent: mat-palette($design);
 $demo-warn: mat-palette($mat-red);
 $demo-theme: mat-light-theme($demo-primary, $demo-accent, $demo-warn);
 

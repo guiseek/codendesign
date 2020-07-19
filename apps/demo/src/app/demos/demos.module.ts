@@ -10,12 +10,14 @@ import {
 } from '@cnd/code/components';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { DemosRoutingModule } from './demos-routing.module';
 import { DemosComponent } from './demos.component';
 import { AccordionComponent } from './accordion/accordion.component';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatButtonModule } from '@angular/material/button';
 import { DialogComponent } from './dialog/dialog.component';
 import { PopoverComponent } from './popover/popover.component';
 import { TableComponent } from './table/table.component';
@@ -26,25 +28,28 @@ import { TextFieldComponent } from './text-field/text-field.component';
 @NgModule({
   declarations: [
     DemosComponent,
-    AccordionComponent,
+    TableComponent,
+    FieldComponent,
+    SelectComponent,
     DialogComponent,
     PopoverComponent,
-    TableComponent,
-    SelectComponent,
-    FieldComponent,
+    AccordionComponent,
     TextFieldComponent,
   ],
   imports: [
     CommonModule,
+    LayoutModule,
     MatTabsModule,
+    MatListModule,
     MatButtonModule,
+    MatSidenavModule,
+    CodeFieldModule,
+    CodeTableModule,
     CodeDialogModule,
     CodeSelectModule,
-    CodeAccordionModule,
-    CodeFieldModule,
     CodePopoverModule,
     CodeTextFieldModule,
-    CodeTableModule,
+    CodeAccordionModule,
     ReactiveFormsModule,
     DemosRoutingModule,
   ],

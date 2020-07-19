@@ -9,6 +9,7 @@ import { DataModule } from '@cnd/data';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
@@ -18,27 +19,28 @@ import { firebaseConfig } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+
+const routeConfig: Routes = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('./demos/demos.module').then((m) => m.DemosModule),
+  },
+  {
+    path: 'docs',
+    loadChildren: () =>
+      import('./docs/docs.module').then((m) => m.DocsModule),
+  },
+];
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routeConfig),
     AngularFireModule.initializeApp(firebaseConfig),
-    RouterModule.forRoot([
-      {
-        path: '',
-        loadChildren: () =>
-          import('./demos/demos.module').then((m) => m.DemosModule),
-      },
-      {
-        path: 'docs',
-        loadChildren: () =>
-          import('./docs/docs.module').then((m) => m.DocsModule),
-      },
-    ]),
-    DataModule,
     MatCardModule,
     MatIconModule,
     MatListModule,
@@ -49,6 +51,7 @@ import { MatButtonModule } from '@angular/material/button';
     CodeTextFieldModule,
     CodePopoverModule,
     CodeAccordionModule,
+    DataModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ScullyLibModule,

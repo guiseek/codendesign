@@ -1,11 +1,11 @@
 import { sandboxOf } from 'angular-playground';
-import { FramesComponent } from './frames.component';
+import { CodeFramesComponent } from './frames.component';
 
 const slides = [
   { headline: '', src: '' }
 ];
 
-export default sandboxOf(FramesComponent)
+export default sandboxOf(CodeFramesComponent)
   .add('default', {
     template: `<cnd-frames [slides]="slides"> </cnd-frames>`
   });
