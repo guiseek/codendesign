@@ -1,5 +1,6 @@
 import { DataServiceFactory } from './data-service.factory';
-import { DataSource, BaseEntity } from '@cnd/core';
+import { DataSource } from '@cnd/core';
+import { BaseEntity } from '@cnd/domain';
 import { Injectable } from '@angular/core';
 
 @Injectable()

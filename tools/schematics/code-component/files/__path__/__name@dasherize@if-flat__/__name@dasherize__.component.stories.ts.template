@@ -1,24 +1,26 @@
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { Code<%= classify(name) %>Module } from './<%= dasherize(name) %>.module';
+import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
-import { <%= classify(name) %>Module, <%= classify(name) %>Component } from '@cnd/code/components';
+const slides = [
+  { headline: '', src: '' }
+];
 
 export default {
-  title: '<%= classify(name) %>Component',
+  title: 'Code<%= classify(name) %>Component',
   moduleMetadata: {
     imports: [
-      <%= classify(name) %>Module
+      Code<%= classify(name) %>Module
     ],
   },
-  component: <%= classify(name) %>Component,
+  component: Code<%= classify(name) %>Component,
   template: `
-    <<%= selector %>>
-
-    </<%= selector %>>
+    <<%= selector %> [slides]="slides"> </<%= selector %>>
   `,
   props: {
-    label: text('Label', 'Nome'),
-    onChange: action('change', {
+    animationType: text('Label', 'Animação'),
+    slideChanged: action('change', {
       allowFunction: true,
     }),
   },

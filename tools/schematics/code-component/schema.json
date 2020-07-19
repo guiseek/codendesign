@@ -12,11 +12,6 @@
       },
       "x-prompt": "O nome será usado na tag, pense semânticamente."
     },
-    "exports": {
-      "description": "Exportar componente",
-      "type": "boolean",
-      "default": true
-    },
     "story": {
       "description": "Adicionar ao stockbook?",
       "type": "boolean",

@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { BaseEntity } from '../models/base-entity.model';
+import { BaseEntity } from '@cnd/domain';
 
 /**
  * Interface configuração

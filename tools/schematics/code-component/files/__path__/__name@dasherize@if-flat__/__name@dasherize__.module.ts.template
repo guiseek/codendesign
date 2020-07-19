@@ -1,0 +1,17 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+
+@NgModule({
+  declarations: [
+    Code<%= classify(name) %>Component,
+  ],
+  imports: [
+    CommonModule,
+  ],
+  exports: [
+    Code<%= classify(name) %>Component,
+  ],
+})
+export class Code<%= classify(name) %>Module {}

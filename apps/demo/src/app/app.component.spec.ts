@@ -1,4 +1,3 @@
-import { DataModule } from '@cnd/data';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ScullyLibModule } from '@scullyio/ng-lib';
@@ -22,7 +21,6 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        DataModule,
         RouterTestingModule,
         MatCardModule,
         MatIconModule,
@@ -59,7 +57,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to Code \'N Design!'
+      'Code \'N Design!'
     );
   });
 });

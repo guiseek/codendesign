@@ -1,15 +1,8 @@
 <mat-toolbar color="primary">
-  <h1 class="mat-h1">Welcome to {{ title }}!</h1>
+  <h1 class="mat-h1">{{ title }}!</h1>
 
   <span class="spacer"></span>
 
-  <a
-    *ngFor="let top of topLevel$ | async"
-    color="accent"
-    mat-stroked-button
-    [routerLink]="[top.route]"
-    >{{ top.title }}</a
-  >
   <a mat-stroked-button color="accent" [routerLink]="['/docs']">Docs</a>
 
   <button type="button" mat-icon-button [cndPopoverOpen]="pop">
@@ -20,4 +13,6 @@
   <button mat-stroked-button>Login</button>
 </ng-template>
 
-<router-outlet></router-outlet>
+<main role="main">
+  <router-outlet></router-outlet>
+</main>

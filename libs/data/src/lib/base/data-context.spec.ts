@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { DataServiceFactory } from './data-service.factory';
 import { DataContext } from './data-context';
-import { Attribute, Entity, FirebaseEntity, DataSourceType } from '@cnd/core';
+import { Attribute, Entity, DataSourceType } from '@cnd/core';
+import { FirebaseEntity } from '@cnd/domain';
 
 @Entity('users')
 export class User extends FirebaseEntity {

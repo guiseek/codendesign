@@ -1,10 +1,15 @@
-name: Node CI
+name: C.N.D Publish CI
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
+    - release/*
+  pull_request:
+    branches: [master]
 
 jobs:
-  build:
-
+  install:
     runs-on: ubuntu-latest
 
     strategy:
@@ -12,17 +17,36 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run affected:build:ci
-        npm run affected:test:ci
-    - name: Release semantico
-      run: npm run semantic:ci
-    env:
-      CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Builds
+        run: |
+          npm run nx run code-components:build --prod
+          npm run nx run demo:build --prod
+      - name: Prepare demo and storybook for deploy
+        run: |
+          npm run scully --pr demo --sr --prod
+          npm run nx run code-components:build-storybook --configuration=ci
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:demo,hosting:storybook
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

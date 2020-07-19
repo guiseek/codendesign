@@ -1,0 +1,4 @@
+export interface <%= classify(name) %> {
+  headline?: string;
+  src: string;
+}

@@ -1,7 +1,9 @@
 module.exports = {
   types: [
-    { value: 'feat', name: 'feat:     Nova funcionalidade' },
-    { value: 'fix', name: 'fix:      Correção de bug' },
+    { value: 'code', name: 'code:     Alterações de CÓDIGO do projeto, que não \n            seja imagens, scss/temas, specs/tokens' },
+    { value: 'design', name: 'design:   Alterações de DESIGN do projeto, como \n            imagens, scss/temas, specs/tokens' },
+    { value: 'feat', name: 'feat:     Nova funcionalidade de código ou design' },
+    { value: 'fix', name: 'fix:      Correção de bug em código ou design' },
     { value: 'docs', name: 'docs:     Apenas documentações foram alteradas' },
     { value: 'style', name: 'style:    Alterações que não afetam a semântica do código\n            (espaços, formatação, pontuações faltando, etc)', },
     { value: 'refactor', name: 'refactor: Alteração que não corrige um bug nem adiciona uma funcionalidade', },
@@ -9,17 +11,17 @@ module.exports = {
     { value: 'test', name: 'test:     Adicionando testes que faltavam' },
     { value: 'chore', name: 'chore:    Alterações no processo de compilação/build ou \n            ferramentas por ex. para geração de documentação', },
     { value: 'revert', name: 'revert:   Reverter para um commit' },
-    { value: 'design', name: 'design:   Alterações de design do projeto, como \n            imagens, scss/temas, specs/tokens' },
     { value: 'WIP', name: 'WIP:      Trabalho em progresso' },
     { value: 'CI', name: 'CI:      Integração contínua / Pipeline / Esteira' },
   ],
 
   scopes: [
+    { name: 'components', description: 'Algum dos componentes foi alterado' },
     { name: 'core', description: 'Core lib foi alterada' },
     { name: 'data', description: 'Data lib foi alterada' },
-    { name: 'shared', description: 'Alguma das libs compartilhadas' },
-    { name: 'code', description: 'Alguma das libs de funcionalidade' },
-    { name: 'team', description: 'Documentações interna da equipe' },
+    { name: 'demo', description: 'Demo app foi alterado' },
+    { name: 'storybook', description: 'Storybook app foi alterado' },
+    { name: 'playground', description: 'Playground app foi alterado' },
     { name: 'infra', description: 'Documentações de gerenciamento' },
     { name: 'scss', description: 'Ajustes no código de estilos' },
     { name: 'image', description: 'Imagens foram alteradas' },

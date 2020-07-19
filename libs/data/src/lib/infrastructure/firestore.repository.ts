@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FirebaseEntity, Repository } from '@cnd/core';
+import { Repository } from '@cnd/core';
+import { FirebaseEntity } from '@cnd/domain';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import * as _ from 'lodash';

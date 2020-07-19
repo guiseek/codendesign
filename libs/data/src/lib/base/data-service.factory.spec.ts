@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { BaseEntity, DataSource, DataSourceType } from '@cnd/core';
+import { DataSource, DataSourceType } from '@cnd/core';
+import { BaseEntity } from '@cnd/domain';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';

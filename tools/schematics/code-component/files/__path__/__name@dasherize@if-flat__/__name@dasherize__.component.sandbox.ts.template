@@ -1,0 +1,11 @@
+import { sandboxOf } from 'angular-playground';
+import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+const slides = [
+  { headline: '', src: '' }
+];
+
+export default sandboxOf(Code<%= classify(name) %>Component)
+  .add('default', {
+    template: `<<%= selector %> [slides]="slides"> </<%= selector %>>`
+  });
