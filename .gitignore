@@ -41,3 +41,4 @@ Thumbs.db
 /build
 /.verdaccio/build/local-registry
 /.firebase
+scully.log

@@ -8,6 +8,9 @@
   height: 100%;
   margin: 0 auto;
 }
+.mat-toolbar {
+  min-height: 56px;
+}
 
 .mat-toolbar h1 {
   font-family: 'Montserrat', sans-serif;

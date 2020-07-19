@@ -1,7 +1,44 @@
-<h3>ScullyIo content</h3>
-<hr>
-<pre>{{ (components$ | async) | json }}</pre>
-<!-- This is where Scully will inject the static HTML -->
-<scully-content></scully-content>
-<hr>
-<h4>End of content</h4>
+<div class="docs-container" [class.docs-is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="docs-sidenav-container">
+    <mat-sidenav
+      #snav
+      class="docs-sidenav"
+      [attr.role]="mobileQuery.matches ? 'dialog' : 'navigation'"
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [opened]="!mobileQuery.matches"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <figure class="logo">
+        <img src="/images/CodeNDesign.svg" alt="Logo Code 'N Design" />
+      </figure>
+      <mat-nav-list>
+        <h3 mat-subheader>Componentes</h3>
+        <a
+          mat-list-item
+          routerLinkActive
+          *ngFor="let cmd of docs.components() | async"
+          [routerLink]="[cmd.route]"
+          >{{ cmd.title }}</a
+        >
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="docs-container scrollbar" role="doc-example">
+      <button
+        type="button"
+        *ngIf="snav"
+        mat-icon-button
+        class="nav-toggler"
+        [attr.aria-label]="snav.opened ? 'Fechar navegação' : 'Abrir navegação'"
+        (click)="snav.toggle()"
+      >
+        <i class="material-icons" aria-label="Alterna icone da navegação">{{
+          snav.opened ? 'menu_open' : 'menu'
+        }}</i>
+      </button>
+
+      <scully-content></scully-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

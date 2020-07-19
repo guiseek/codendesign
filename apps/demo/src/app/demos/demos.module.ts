@@ -24,6 +24,8 @@ import { TableComponent } from './table/table.component';
 import { SelectComponent } from './select/select.component';
 import { FieldComponent } from './field/field.component';
 import { TextFieldComponent } from './text-field/text-field.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { TextFieldComponent } from './text-field/text-field.component';
     MatTabsModule,
     MatListModule,
     MatButtonModule,
+    MatToolbarModule,
     MatSidenavModule,
     CodeFieldModule,
     CodeTableModule,
@@ -52,6 +55,7 @@ import { TextFieldComponent } from './text-field/text-field.component';
     CodeAccordionModule,
     ReactiveFormsModule,
     DemosRoutingModule,
+    ScullyLibModule
   ],
 })
 export class DemosModule {}

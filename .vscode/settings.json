@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "codendesign"
-    ]
+    ],
+    "npm.packageManager": "yarn",
+    "prettier.packageManager": "yarn",
+    "tslint.packageManager": "yarn"
 }

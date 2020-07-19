@@ -1,3 +1,4 @@
+import { DocsService } from './../shared/docs.service';
 import { map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
@@ -25,9 +26,10 @@ export class DemosComponent implements OnInit, OnDestroy {
 
   links = children.map(({ path }) => path);
   constructor(
-    media: MediaMatcher,
-    private breakpointObserver: BreakpointObserver,
-    changeDetectorRef: ChangeDetectorRef
+    public docs: DocsService,
+    public media: MediaMatcher,
+    public changeDetectorRef: ChangeDetectorRef,
+    private breakpointObserver: BreakpointObserver
   ) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

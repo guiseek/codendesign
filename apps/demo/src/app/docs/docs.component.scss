@@ -3,12 +3,12 @@
   flex-direction: column;
   flex: 1;
 }
-.demos-container {
+.docs-container {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.demos-sidenav {
+.docs-sidenav {
   width: 256px;
   .logo {
     margin: 8px 8px 0;
@@ -20,17 +20,7 @@
 .demo-sidenav {
   width: calc(100% - 512px);
 }
-// .demos-container {
-//   display: flex;
-//   flex-direction: column;
-//   position: absolute;
-//   top: 64px;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-// }
-
-.demos-scrollbar {
+.docs-scrollbar {
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 6px;
@@ -45,19 +35,18 @@
     background-color: #333;
   }
 }
-
-.demos-is-mobile .demos-toolbar {
+.docs-is-mobile .docs-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
   z-index: 2;
 }
-.demos-sidenav-container {
+.docs-sidenav-container {
   /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-     causes `<mat-sidenav-content>` to act as our scrolling element for desktop demoss. */
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop docss. */
   flex: 1;
 }
 
-.demos-is-mobile .demos-sidenav-container {
+.docs-is-mobile .docs-sidenav-container {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;

@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex: 1;
+  margin: 0 auto;
+  > div {
+    width: 1024px;
+    > header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i.material-icons {
+        font-size: 32px;
+      }
+    }
+    > section {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-evenly;
+      a {
+        display: block;
+        width: 28%;
+        padding: 2%;
+        // width: calc(50% - 8px);
+
+      }
+    }
+  }
+}
