@@ -18,12 +18,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "M2Q1ZDUyODYtNTA3NS00OGUyLWE0ZTMtYzI2NjhmMTA0Zjk5fHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -35,51 +30,29 @@
     },
     "demo-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "demo"
-      ]
+      "implicitDependencies": ["demo"]
     },
     "core": {
-      "tags": [
-        "scope:core",
-        "type:util"
-      ]
+      "tags": ["scope:core", "type:util"]
     },
     "data": {
-      "tags": [
-        "scope:data",
-        "type:data-access"
-      ]
+      "tags": ["scope:data", "type:data-access"]
     },
     "code-components": {
-      "tags": [
-        "scope:code",
-        "type:ui"
-      ]
+      "tags": ["scope:code", "type:ui"]
     },
     "playground": {
-      "tags": [
-        "scope:demo",
-        "type:ui"
-      ]
+      "tags": ["scope:demo", "type:ui"]
     },
     "demo-playground": {
-      "tags": [
-        "scope:demo",
-        "type:ui"
-      ]
+      "tags": ["scope:demo", "type:ui"]
     },
     "domain": {
-      "tags": [
-        "scope:data",
-        "type:data-access"
-      ]
+      "tags": ["scope:data", "type:data-access"]
     },
     "code-components-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "code-components"
-      ]
+      "implicitDependencies": ["code-components"]
     }
   }
 }
