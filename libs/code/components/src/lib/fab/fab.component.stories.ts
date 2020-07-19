@@ -3,15 +3,15 @@ import { withA11y } from '@storybook/addon-a11y';
 import { storiesOf } from '@storybook/angular';
 import { text, number, boolean } from '@storybook/addon-knobs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Code<%= classify(name) %>Module } from './<%= dasherize(name) %>.module';
-import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { CodeFabModule } from './fab.module';
+import { CodeFabComponent } from './fab.component';
 
 const slides = [{ headline: '', src: '' }];
 const template = `<cnd-fab [slides]="slides"> </cnd-fab>`;
 const moduleMetadata = {
   imports: [BrowserAnimationsModule, CodeFabModule],
 };
-storiesOf('Code<%= classify(name) %>', module)
+storiesOf('CodeFab', module)
   .addDecorator(withA11y)
   .add('Simple', () => {
     return {
