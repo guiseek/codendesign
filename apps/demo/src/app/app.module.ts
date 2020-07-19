@@ -5,7 +5,6 @@ import {
   CodeTextFieldModule,
   CodeTableModule,
 } from '@cnd/code/components';
-import { DataModule } from '@cnd/data';
 import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -51,7 +50,6 @@ const routeConfig: Routes = [
     CodeTextFieldModule,
     CodePopoverModule,
     CodeAccordionModule,
-    DataModule.forRoot(),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ScullyLibModule,

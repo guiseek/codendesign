@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
-    "nx": "nx",
+    "nx": "node --max_old_space_size=8000 ./node_modules/.bin/nx",
     "start": "ng serve",
     "build": "ng build",
     "clean": "rimraf ./dist",
@@ -40,6 +40,8 @@
     "help": "nx help",
     "cmt": "git-cz",
     "local-registry": "./scripts/local-registry.sh",
+    "feat:start": "git flow feature start",
+    "feat:finish": "git flow feature finish",
     "semantic-release": "semantic-release",
     "playground": "angular-playground",
     "scully": "scully",
