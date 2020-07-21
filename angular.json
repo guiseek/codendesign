@@ -404,6 +404,45 @@
           }
         }
       }
+    },
+    "plugin-scully-highlight": {
+      "root": "libs/plugin/scully-highlight",
+      "sourceRoot": "libs/plugin/scully-highlight/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/plugin/scully-highlight/tsconfig.lib.json",
+              "libs/plugin/scully-highlight/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/plugin/scully-highlight/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/plugin/scully-highlight/jest.config.js",
+            "tsConfig": "libs/plugin/scully-highlight/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/plugin/scully-highlight",
+            "tsConfig": "libs/plugin/scully-highlight/tsconfig.lib.json",
+            "packageJson": "libs/plugin/scully-highlight/package.json",
+            "main": "libs/plugin/scully-highlight/src/index.ts",
+            "assets": ["libs/plugin/scully-highlight/*.md"]
+          }
+        }
+      }
     }
   },
   "cli": {

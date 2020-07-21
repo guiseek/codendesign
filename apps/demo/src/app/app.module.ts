@@ -1,3 +1,4 @@
+import { LayoutModule } from '@angular/cdk/layout';
 import {
   CodeAccordionModule,
   CodeFieldModule,
@@ -21,6 +22,7 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { OverviewComponent } from './overview/overview.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const routeConfig: Routes = [
   {
@@ -43,11 +45,13 @@ const routeConfig: Routes = [
   declarations: [AppComponent, OverviewComponent],
   imports: [
     BrowserModule,
+    LayoutModule,
     RouterModule.forRoot(routeConfig),
     AngularFireModule.initializeApp(firebaseConfig),
     MatCardModule,
     MatIconModule,
     MatListModule,
+    MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
     CodeTableModule,

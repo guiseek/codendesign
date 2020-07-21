@@ -50,6 +50,9 @@
     "code-components-e2e": {
       "tags": [],
       "implicitDependencies": ["code-components"]
+    },
+    "plugin-scully-highlight": {
+      "tags": []
     }
   }
 }
