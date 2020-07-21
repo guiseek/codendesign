@@ -2,7 +2,8 @@ import { sandboxOf } from 'angular-playground';
 import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
 const slides = [
-  { headline: '', src: '' }
+  { headline: 'Code 1', src: '/images/<%= dasherize(name) %>-1.svg' },
+  { headline: 'Code 2', src: '/images/<%= dasherize(name) %>-2.svg' },
 ];
 
 export default sandboxOf(Code<%= classify(name) %>Component)

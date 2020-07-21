@@ -3,19 +3,19 @@ import { withA11y } from '@storybook/addon-a11y';
 import { storiesOf } from '@storybook/angular';
 import { text, number, boolean } from '@storybook/addon-knobs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Code<%= classify(name) %>Module } from './<%= dasherize(name) %>.module';
-import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+import { CodeSlidesModule } from './slides.module';
+import { CodeSlidesComponent } from './slides.component';
 
 const slides = [
-  { headline: 'Code 1', src: '/images/<%= dasherize(name) %>-1.svg' },
-  { headline: 'Code 2', src: '/images/<%= dasherize(name) %>-2.svg' },
+  { headline: 'Code 1', src: '/images/slides-1.svg' },
+  { headline: 'Code 2', src: '/images/slides-2.svg' },
 ];
 
 const template = `<cnd-fab [slides]="slides"> </cnd-fab>`;
 const moduleMetadata = {
-  imports: [BrowserAnimationsModule, Code<%= classify(name) %>Module],
+  imports: [BrowserAnimationsModule, CodeSlidesModule],
 };
-storiesOf('Code<%= classify(name) %>', module)
+storiesOf('CodeSlides', module)
   .addDecorator(withA11y)
   .add('Simple', () => {
     return {

@@ -1,4 +1,4 @@
-<% if(!!viewEncapsulation) { %><%= selector %> { <% } else { %>:host { <% }%>
+:host { 
   flex: 1;
 }
 
