@@ -5,6 +5,7 @@ import {
   Rule,
   Tree,
 } from '@angular-devkit/schematics';
+import { strings } from '@angular-devkit/core';
 import {
   addModuleImportToModule,
   buildComponent,
@@ -12,13 +13,6 @@ import {
   hasNgModuleImport,
 } from '@angular/cdk/schematics';
 import { Schema } from '@schematics/angular/component/schema';
-import { join } from 'path';
-
-// interface Demo {
-//   name: string;
-//   path: string;
-//   flat: boolean;
-// }
 
 interface Doc {
   name: string;
@@ -49,62 +43,33 @@ function addRequiredModules(options: Schema): Rule {
     return host;
   };
 }
-function demoPath(demo: 'playground' | 'storybook', name: string) {
-  return join('libs', 'demo', demo, 'src', 'lib', name);
-}
-
-function getModule({ name, project }: ComponentSchema) {
-  return { name, project };
-}
-
-function component({ name, ...options }: ComponentSchema) {
-  return {
-    ...options,
-    name,
-    exports: true,
-    module: `${name}/${name}.module.ts`,
-  };
-}
-
-// function playground(name: string): Demo {
-//   return { name, flat: true, path: demoPath('playground', name) };
-// }
-
-// function storybook(name: string) {
-//   return { name, flat: true, path: demoPath('storybook', name) };
-// }
 
 function scully(name: string): Doc {
-  return { name, target: 'docs' };
+  return { name, target: 'docs/components' };
 }
 
 function mergeSchema(schema: ComponentSchema) {
   return { ...defaultSchema, ...schema };
 }
 
-function createModule(options: Partial<ComponentSchema>): Rule {
-  return externalSchematic('@schematics/angular', 'module', options);
+function addTsExport(filePath: string, filesToExport: string[]): Rule {
+  return (host: Tree) => {
+    let content = host.read(filePath) + '';
+
+    for (const file of filesToExport) {
+      content += `export * from '${file}';\n`;
+    }
+
+    host.overwrite(filePath, content);
+  };
 }
-
-function createComponent(options: ComponentSchema): Rule {
-  return externalSchematic('@ngneat/spectator', 'spectator-component', options);
-}
-
-// function createPlayground(options: Demo) {
-//   return externalSchematic('angular-playground', 'sandbox', options);
-// }
-
-// function createStorybook(options: Demo) {
-//   return buildComponent(options, {
-//     template:
-//       './__path__/__name@dasherize@if-flat__/__name@dasherize__.component.stories.ts.template',
-//   });
-// }
 
 function createScully(options: Doc) {
   return externalSchematic('@scullyio/init', 'post', options);
 }
 export function codeComponent(options: Schema): Rule {
+  const indexFile = 'libs/code/components/src/index.ts';
+  const componentName = strings.dasherize(options.name);
   return chain([
     buildComponent(
       { ...options },
@@ -116,26 +81,14 @@ export function codeComponent(options: Schema): Rule {
       }
     ),
     addRequiredModules(options),
+    addTsExport(indexFile, [`./lib/${componentName}/index`]),
   ]);
 }
 
 export default function (schema: ComponentSchema): Rule {
   const options = mergeSchema(schema);
-
-  const schematics = [
-    // createModule(getModule(options)),
+  return chain([
     codeComponent(options),
-    // createComponent(component(options)),
-  ];
-  // if (options.sandbox) {
-  //   schematics.push(createPlayground(playground(options.name)));
-  // }
-  // if (options.story) {
-  //   schematics.push(createStorybook(storybook(options.name)));
-  // }
-  if (options.doc) {
-    schematics.push(createScully(scully(options.name)));
-  }
-
-  return chain(schematics);
+    createScully(scully(options.name))
+  ]);
 }

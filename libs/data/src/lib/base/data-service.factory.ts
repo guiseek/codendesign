@@ -5,8 +5,9 @@ import {
   Repository,
   DataSource,
   DataSourceType,
+  AbstractEntity
 } from '@cnd/core';
-import { FirebaseEntity, BaseEntity } from '@cnd/domain';
+import { FirebaseEntity } from '@cnd/domain';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -23,13 +24,13 @@ export class DataServiceFactory {
   ) {}
 
   create(
-    entity: BaseEntity,
+    entity: AbstractEntity,
     dataSource: DataSource
-  ): Repository<BaseEntity> | undefined {
+  ): Repository<AbstractEntity> | undefined {
     return this.getDataSource(dataSource, entity);
   }
 
-  getDataSource({ type }: DataSource, entity: BaseEntity) {
+  getDataSource({ type }: DataSource, entity: AbstractEntity) {
     switch (type) {
       case DataSourceType.firebase: {
         return new FirebaseRepository(entity as FirebaseEntity, this.afdb);

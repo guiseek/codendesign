@@ -44,15 +44,15 @@
     "playground": {
       "tags": ["scope:demo", "type:ui"]
     },
-    "demo-playground": {
-      "tags": ["scope:demo", "type:ui"]
-    },
     "domain": {
       "tags": ["scope:data", "type:data-access"]
     },
     "code-components-e2e": {
       "tags": [],
       "implicitDependencies": ["code-components"]
+    },
+    "plugin-scully-highlight": {
+      "tags": []
     }
   }
 }

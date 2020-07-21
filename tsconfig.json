@@ -19,8 +19,10 @@
       "@cnd/core": ["libs/core/src/index.ts"],
       "@cnd/data": ["libs/data/src/index.ts"],
       "@cnd/code/components": ["libs/code/components/src/index.ts"],
-      "@cnd/demo/playground": ["libs/demo/playground/src/index.ts"],
-      "@cnd/domain": ["libs/domain/src/index.ts"]
+      "@cnd/domain": ["libs/domain/src/index.ts"],
+      "@cnd/plugin/scully-highlight": [
+        "libs/plugin/scully-highlight/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

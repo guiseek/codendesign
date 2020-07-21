@@ -27,6 +27,8 @@
                 "input": "design/images",
                 "output": "/images/"
               },
+              "apps/demo/src/robots.txt",
+              "apps/demo/src/sitemap.txt",
               "apps/demo/src/favicon.ico",
               "apps/demo/src/assets"
             ],
@@ -336,50 +338,6 @@
         }
       }
     },
-    "demo-playground": {
-      "projectType": "library",
-      "root": "libs/demo/playground",
-      "sourceRoot": "libs/demo/playground/src",
-      "prefix": "cnd-playground",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "libs/demo/playground/tsconfig.lib.json",
-            "project": "libs/demo/playground/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/demo/playground/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/demo/playground/tsconfig.lib.json",
-              "libs/demo/playground/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/demo/playground/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/demo/playground/jest.config.js",
-            "tsConfig": "libs/demo/playground/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/demo/playground/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
     "domain": {
       "projectType": "library",
       "root": "libs/domain",
@@ -443,6 +401,45 @@
           "options": {
             "tsConfig": ["apps/code-components-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/code-components-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "plugin-scully-highlight": {
+      "root": "libs/plugin/scully-highlight",
+      "sourceRoot": "libs/plugin/scully-highlight/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/plugin/scully-highlight/tsconfig.lib.json",
+              "libs/plugin/scully-highlight/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/plugin/scully-highlight/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/plugin/scully-highlight/jest.config.js",
+            "tsConfig": "libs/plugin/scully-highlight/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/plugin/scully-highlight",
+            "tsConfig": "libs/plugin/scully-highlight/tsconfig.lib.json",
+            "packageJson": "libs/plugin/scully-highlight/package.json",
+            "main": "libs/plugin/scully-highlight/src/index.ts",
+            "assets": ["libs/plugin/scully-highlight/*.md"]
           }
         }
       }

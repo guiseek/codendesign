@@ -1,9 +1,13 @@
-import { DocsService } from './../shared/docs.service';
 import { Observable } from 'rxjs';
-import { Component, OnInit, ViewEncapsulation, ViewContainerRef, ComponentFactoryResolver, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import {ActivatedRoute, Router, ROUTES} from '@angular/router';
 import { ScullyRoutesService, ScullyRoute } from '@scullyio/ng-lib';
-import { map } from 'rxjs/operators';
+import { DocsService } from './../shared/docs.service';
+import {
+  Component,
+  ViewEncapsulation,
+  ChangeDetectorRef,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 
 declare var ng: any;
@@ -13,23 +17,25 @@ declare var ng: any;
   templateUrl: './docs.component.html',
   styleUrls: ['./docs.component.scss'],
   preserveWhitespaces: true,
-  encapsulation: ViewEncapsulation.Emulated
-
+  encapsulation: ViewEncapsulation.Emulated,
 })
-export class DocsComponent implements OnDestroy {
+export class DocsComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-
+  doc$: Observable<ScullyRoute>;
   constructor(
     public docs: DocsService,
-    public media: MediaMatcher,
-    public changeDetectorRef: ChangeDetectorRef
+    private media: MediaMatcher,
+    private scully: ScullyRoutesService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
-
+  ngOnInit() {
+    this.doc$ = this.scully.getCurrent();
+  }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }

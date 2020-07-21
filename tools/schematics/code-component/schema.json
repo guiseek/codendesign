@@ -12,21 +12,6 @@
       },
       "x-prompt": "O nome será usado na tag, pense semânticamente."
     },
-    "story": {
-      "description": "Adicionar ao stockbook?",
-      "type": "boolean",
-      "alias": "s"
-    },
-    "doc": {
-      "description": "Adicionar documentação?",
-      "type": "boolean"
-    },
-    "sandbox": {
-      "description": "Adicionar um playground?",
-      "type": "boolean",
-      "alias": "s",
-      "x-prompt": "Esse componente possui variações?"
-    },
     "changeDetection": {
       "description": "Configurar detecção de mudanças.",
       "x-prompt": "Pense em performance.",

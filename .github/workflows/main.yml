@@ -41,6 +41,7 @@ jobs:
         run: |
           npm run nx run code-components:build --prod
           npm run nx run demo:build --prod
+          npm run nx run plugin-scully-highlight:build --prod
       - name: Prepare demo and storybook for deploy
         run: |
           npm run scully --pr demo --sr --prod

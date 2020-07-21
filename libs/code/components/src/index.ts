@@ -6,3 +6,4 @@ export * from './lib/table/index';
 export * from './lib/popover/index';
 export * from './lib/dialog/index';
 export * from './lib/frames/index';
+export * from './lib/fab/index';

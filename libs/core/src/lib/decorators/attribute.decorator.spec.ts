@@ -1,9 +1,9 @@
-import { BaseEntity } from '@cnd/domain';
+import { AbstractEntity } from '../abstractions/abstract-entity.model';
 import { Attribute } from './attribute.decorator';
 import { Entity } from './entity.decorator';
 
 @Entity('user')
-class User extends BaseEntity {
+class User extends AbstractEntity {
   @Attribute({ serializedName: 'firstName' })
   name: string;
 

@@ -4,8 +4,6 @@ description: 'accordion description'
 published: true
 
 ---
-# Accordion
-
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accordion.component.scss']
 })
 export class AccordionComponent implements OnInit {
-  public route = 'accordion';
   panels = [
     {
       disabled: true,

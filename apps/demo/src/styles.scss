@@ -1,8 +1,10 @@
 @import '~@angular/material/theming';
 @import '~@angular/cdk/overlay-prebuilt.css';
 
+
 @include mat-core();
 
+@import 'design/scss/highlight/a11y-light.scss';
 @import 'design/scss/palettes/codendesign.scss';
 
 $demo-primary: mat-palette($code);
@@ -19,7 +21,6 @@ body {
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  // font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .spacer {

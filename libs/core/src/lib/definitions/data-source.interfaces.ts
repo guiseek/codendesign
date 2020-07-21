@@ -1,10 +1,10 @@
 import { ApiConfig, EntityServiceConfig, CustomServiceConfig } from './config.interfaces';
-import { BaseEntity } from '@cnd/domain';
+import { AbstractEntity } from '../abstractions/abstract-entity.model';
 
 export interface DataSource {
   config?: ApiConfig;
   type: DataSourceType;
-  entities?: Array<EntityServiceConfig> | Array<BaseEntity>;
+  entities?: Array<EntityServiceConfig> | Array<AbstractEntity>;
   services?: Array<CustomServiceConfig>;
 }
 
