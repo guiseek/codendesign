@@ -4,8 +4,6 @@ description: 'dialog description'
 published: true
 
 ---
-# dialog
-
 ```typescript
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Dialog } from '@cnd/code/components';
