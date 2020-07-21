@@ -1,5 +1,7 @@
 ## Todo
+
 - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/react/en/introduction/)
+
 
 ## Executando o Commitizen no git commit
 Demonstração de como incorporar o Commitizen no fluxo de trabalho existente do git commit usando ganchos do git e a opção da linha de comandos `--hook`. Isso é útil para os mantenedores do projeto que desejam seguir um padrão para mensagens de commit e  garantir que o formato de confirmação adequado seja aplicado às contribuições daqueles não familiarizados com o _Commitizen_.
@@ -11,7 +13,6 @@ Após a implementação de qualquer um desses métodos, os usuários que executa
 
 
 ### Ganchos tradicionais
-
 Altere `.git/hooks/prepare-commit-msg` com o seguinte trecho de código `bash`:
 
 ```sh
@@ -19,7 +20,9 @@ Altere `.git/hooks/prepare-commit-msg` com o seguinte trecho de código `bash`:
 exec < /dev/tty && node_modules/.bin/git-cz --hook || true
 ```
 
+
 > **DICA:** caso não tenha familiaridade com o `vi` ou `vim`, use o editor como _VS Code_
+
 
 `code .git/hooks/prepare-commit-msg`
 
@@ -36,15 +39,17 @@ Adicione o código bash, salve e volte para o terminal, e em seguida execute
 Repare que o arquivo criado tem permissões diferentes e não estará em vermelho
 pois ele ainda não é um executável, este comando fornece a permissão para execução.
 
+
 `chmod +x .git/hooks/prepare-commit-msg`
 
+
 ---
+
 
 ### Agora ao executar o `git commit` serão apresentadas as perguntas sobre suas alterações.
 # 👍
 
 ### Husky
-
 Para usuários `husky`, adicione a seguinte configuração ao` package.json` do projeto:
 
 ```json

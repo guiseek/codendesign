@@ -8,3 +8,4 @@ export * from './lib/dialog/index';
 export * from './lib/frames/index';
 export * from './lib/fab/index';
 export * from './lib/slides/index';
+export * from './lib/stepper/index';

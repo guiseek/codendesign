@@ -1,3 +1,4 @@
+import { StepperComponent } from './stepper/stepper.component';
 import { TextFieldComponent } from './text-field/text-field.component';
 import { TableComponent } from './table/table.component';
 import { SelectComponent } from './select/select.component';
@@ -23,6 +24,10 @@ export const children: Routes = [
   {
     path: 'popover',
     component: PopoverComponent,
+  },
+  {
+    path: 'stepper',
+    component: StepperComponent,
   },
   {
     path: 'select',

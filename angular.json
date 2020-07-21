@@ -10,7 +10,7 @@
       },
       "root": "apps/demo",
       "sourceRoot": "apps/demo/src",
-      "prefix": "cnd",
+      "prefix": "cnd-demos",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

@@ -5,11 +5,11 @@ import { DemosComponent } from './demos.component';
 import { children } from './route-children';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: DemosComponent,
-  //   children: children
-  // },
+  {
+    path: '',
+    component: DemosComponent,
+    children: children
+  },
   {
     path: ':selector',
     component: DemosComponent,

@@ -6,11 +6,16 @@
 
   <section role="doc-toc">
     <a *ngFor="let cmp of docs.components() | async" [routerLink]="[cmp.route]">
-      <mat-card>
+      <div class="card">
+        <img src="/images/CodeNDesign.svg" [attr.alt]="cmp.title" />
+        <h3>{{ cmp.title }}</h3>
+        <p>{{ cmp.description }}</p>
+      </div>
+      <!-- <mat-card>
         <img mat-card-image src="/images/CodeNDesign.svg" alt="Logo Code 'N Design" />
         <h3 mat-card-title>{{ cmp.title }}</h3>
         <p mat-card-content>{{ cmp.description }}</p>
-      </mat-card>
+      </mat-card> -->
     </a>
   </section>
 </div>

@@ -1,6 +1,6 @@
 ---
-title: table
-description: 'blog description'
+title: Table
+description: 'Table component'
 published: true
 
 ---

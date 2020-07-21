@@ -1,6 +1,6 @@
 ---
-title: slides
-description: blog description
+title: Slides
+description: Slides
 published: false
 ---
 

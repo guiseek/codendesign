@@ -1,6 +1,6 @@
 ---
-title: text-field
-description: 'blog description'
+title: Text Field
+description: 'Text Field component'
 published: true
 
 ---
