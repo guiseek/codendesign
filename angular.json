@@ -33,7 +33,10 @@
               "apps/demo/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["design/scss"]
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []

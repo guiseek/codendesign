@@ -11,7 +11,7 @@ const slides = [
   { headline: 'Code 2', src: '/images/<%= dasherize(name) %>-2.svg' },
 ];
 
-const template = `<cnd-fab [slides]="slides"> </cnd-fab>`;
+const template = `<cnd-<%= dasherize(name) %> [slides]="slides"> </cnd-<%= dasherize(name) %>>`;
 const moduleMetadata = {
   imports: [BrowserAnimationsModule, Code<%= classify(name) %>Module],
 };

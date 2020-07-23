@@ -7,7 +7,8 @@ import {
   CodeTableModule,
   CodeDialogModule,
   CodeSelectModule,
-  CodeStepperModule
+  CodeStepperModule,
+  CodeUploadModule
 } from '@cnd/code/components';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,6 +29,7 @@ import { TextFieldComponent } from './text-field/text-field.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { StepperComponent } from './stepper/stepper.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { StepperComponent } from './stepper/stepper.component';
     AccordionComponent,
     TextFieldComponent,
     StepperComponent,
+    UploadComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +56,7 @@ import { StepperComponent } from './stepper/stepper.component';
     CodeTableModule,
     CodeDialogModule,
     CodeSelectModule,
+    CodeUploadModule,
     CodeStepperModule,
     CodePopoverModule,
     CodeTextFieldModule,

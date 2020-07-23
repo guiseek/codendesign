@@ -1,0 +1,31 @@
+@mixin cnd-upload-theme($theme) {
+  .cnd-upload {
+    $accent: map-get($theme, accent);
+    $primary: map-get($theme, primary);
+    > div {
+      button[type='button'] > svg {
+        path {
+          fill: mat-color($primary);
+        }
+      }
+      border-color: transparent;
+      background-color: transparent;
+      transition: background-color 200ms ease-in-out;
+      &.hovering {
+        border-color: mat-color($primary);
+        background-color: rgba(mat-color($primary), 0.04);
+
+
+      }
+      @each $color in ('primary', 'accent', 'warn') {
+        $palette: map-get($theme, #{$color});
+        [bg='#{$color}'] {
+          background-color: mat-color($palette);
+        }
+        [color='#{$color}'] {
+          color: mat-color($palette);
+        }
+      }
+    }
+  }
+}
