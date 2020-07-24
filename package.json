@@ -7,7 +7,7 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "nx": "node --max_old_space_size=8000 ./node_modules/.bin/nx",
     "start": "ng serve",
-    "build": "nx run demo:build --prod && scully --pr demo --sr --prod",
+    "build": "nx run demo:build --prod --output-hashing none && scully --pr demo --sr --prod",
     "clean": "rimraf ./dist",
     "build:ci": "npm run clean && npm run affected:test && npm run storybook:ci",
     "storybook:ci": "npm run nx run code-components:build-storybook --configuration=ci",
@@ -41,7 +41,8 @@
     "semantic-release": "semantic-release",
     "playground": "angular-playground",
     "scully": "scully",
-    "scully:serve": "scully serve"
+    "scully:serve": "scully serve",
+    "scully:watch": "scully -- --watch"
   },
   "private": true,
   "dependencies": {
