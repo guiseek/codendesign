@@ -310,6 +310,12 @@
             "tsConfig": "tsconfig.playground.json",
             "aot": false,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
+            },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
