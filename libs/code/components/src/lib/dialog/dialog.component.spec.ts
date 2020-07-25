@@ -83,9 +83,9 @@ describe('Dialog', () => {
 
     viewContainerFixture.detectChanges();
     viewContainerFixture.detectChanges();
-    const dialogContainerElement = overlayContainerElement.querySelector(
+    const dialogContainerElement = overlayContainerElement && overlayContainerElement.querySelector(
       'cnd-dialog'
-    )!;
+    );
     expect(dialogContainerElement.getAttribute('role')).toBe('dialog');
     expect(dialogContainerElement.getAttribute('aria-modal')).toBe('true');
   });
@@ -111,9 +111,9 @@ describe('Dialog', () => {
 
     viewContainerFixture.detectChanges();
 
-    const dialogContainerElement = overlayContainerElement.querySelector(
+    const dialogContainerElement = overlayContainerElement && overlayContainerElement.querySelector(
       'cnd-dialog'
-    )!;
+    );
     expect(dialogContainerElement.getAttribute('role')).toBe('dialog');
     expect(dialogContainerElement.getAttribute('aria-modal')).toBe('true');
 
@@ -162,9 +162,9 @@ describe('Dialog', () => {
     expect(dialogRef.componentInstance.dialogRef).toBe(dialogRef);
 
     viewContainerFixture.detectChanges();
-    const dialogContainerElement = overlayContainerElement.querySelector(
+    const dialogContainerElement = overlayContainerElement && overlayContainerElement.querySelector(
       'cnd-dialog'
-    )!;
+    );
     expect(dialogContainerElement.getAttribute('role')).toBe('dialog');
   });
 
@@ -173,9 +173,9 @@ describe('Dialog', () => {
 
     viewContainerFixture.detectChanges();
 
-    const dialogContainerElement = overlayContainerElement.querySelector(
+    const dialogContainerElement = overlayContainerElement && overlayContainerElement.querySelector(
       'cnd-dialog'
-    )!;
+    );
     expect(dialogContainerElement.getAttribute('role')).toBe('alertdialog');
   });
 
@@ -186,9 +186,9 @@ describe('Dialog', () => {
 
     viewContainerFixture.detectChanges();
 
-    const dialogContainerElement = overlayContainerElement.querySelector(
+    const dialogContainerElement = overlayContainerElement && overlayContainerElement.querySelector(
       'cnd-dialog'
-    )!;
+    );
     expect(dialogContainerElement.getAttribute('aria-describedby')).toBe(
       'description-element'
     );
@@ -624,9 +624,9 @@ describe('Dialog', () => {
 
     viewContainerFixture.detectChanges();
 
-    const overlayPane = overlayContainerElement.querySelector(
+    const overlayPane = overlayContainerElement && overlayContainerElement.querySelector(
       '.cdk-global-overlay-wrapper'
-    )!;
+    );
 
     expect(overlayPane.getAttribute('dir')).toBe('rtl');
   });
@@ -672,9 +672,9 @@ describe('Dialog', () => {
     const dialogRef = dialog.openFromComponent(PizzaMsg, {
       viewContainerRef: testViewContainerRef,
     } as DialogConfig);
-    const dialogContainer: CodeDialogContainer = viewContainerFixture.debugElement.query(
+    const dialogContainer: CodeDialogContainer = viewContainerFixture.debugElement && viewContainerFixture.debugElement.query(
       By.directive(CodeDialogContainer)
-    )!.componentInstance;
+    ).componentInstance;
 
     expect(dialogContainer._state).toBe('enter');
 
@@ -1023,7 +1023,7 @@ describe('Dialog', () => {
       viewContainerFixture.detectChanges();
       flushMicrotasks();
 
-      expect(document.activeElement!.tagName).toBe(
+      expect(document.activeElement && document.activeElement.tagName).toBe(
         'CND-DIALOG',
         // 'Expected first tabbable element (input) in the dialog to be focused.'
       );
@@ -1038,7 +1038,7 @@ describe('Dialog', () => {
       viewContainerFixture.detectChanges();
       flushMicrotasks();
 
-      expect(document.activeElement!.tagName).not.toBe('INPUT');
+      expect(document.activeElement && document.activeElement.tagName).not.toBe('INPUT');
     }));
 
     // it('should re-focus trigger element when dialog closes', fakeAsync(() => {
@@ -1167,7 +1167,7 @@ describe('Dialog', () => {
       viewContainerFixture.detectChanges();
       flushMicrotasks();
 
-      expect(document.activeElement!.tagName.toLowerCase()).toBe(
+      expect(document.activeElement && document.activeElement.tagName.toLowerCase()).toBe(
         'cnd-dialog',
         // 'Expected dialog container to be focused.'
       );
@@ -1182,7 +1182,7 @@ describe('Dialog', () => {
       } as DialogConfig);
       viewContainerFixture.detectChanges();
 
-      const container = overlayContainerElement.querySelector('cnd-dialog')!;
+      const container = overlayContainerElement && overlayContainerElement.querySelector('cnd-dialog');
       expect(container.getAttribute('aria-label')).toBe('Hello there');
     });
 
@@ -1195,7 +1195,7 @@ describe('Dialog', () => {
       tick();
       viewContainerFixture.detectChanges();
 
-      const container = overlayContainerElement.querySelector('cnd-dialog')!;
+      const container = overlayContainerElement && overlayContainerElement.querySelector('cnd-dialog');
       expect(container.hasAttribute('aria-labelledby')).toBe(false);
     }));
   });
@@ -1252,7 +1252,7 @@ describe('Dialog with a parent Dialog', () => {
     fixture.detectChanges();
     flush();
 
-    expect(overlayContainerElement.textContent!.trim()).toBe(
+    expect(overlayContainerElement.textContent && overlayContainerElement.textContent.trim()).toBe(
       '',
       // 'Expected closeAll on child Dialog to close dialog opened by parent'
     );
@@ -1271,7 +1271,7 @@ describe('Dialog with a parent Dialog', () => {
     fixture.detectChanges();
     flush();
 
-    expect(overlayContainerElement.textContent!.trim()).toBe(
+    expect(overlayContainerElement.textContent && overlayContainerElement.textContent.trim()).toBe(
       '',
       // 'Expected closeAll on parent Dialog to close dialog opened by child'
     );
@@ -1323,7 +1323,7 @@ class ComponentWithOnPushViewContainer {
 }
 
 @Component({
-  selector: 'arbitrary-component',
+  selector: 'cnd-arbitrary-component',
   template: `<dir-with-view-container></dir-with-view-container>`,
 })
 class ComponentWithChildViewContainer {
@@ -1336,7 +1336,7 @@ class ComponentWithChildViewContainer {
 }
 
 @Component({
-  selector: 'arbitrary-component-with-template-ref',
+  selector: 'cnd-arbitrary-component-with-template-ref',
   template: `<ng-template let-data let-dialogRef="dialogRef">
     Cheese {{ localValue }} {{ data?.value
     }}{{ setDialogRef(dialogRef) }}</ng-template

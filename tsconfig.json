@@ -22,7 +22,8 @@
       "@cnd/domain": ["libs/domain/src/index.ts"],
       "@cnd/plugin/scully-highlight": [
         "libs/plugin/scully-highlight/src/index.ts"
-      ]
+      ],
+      "@cnd/util/testing": ["libs/util/testing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

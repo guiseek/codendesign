@@ -1,7 +1,6 @@
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatInputModule } from '@angular/material/input';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TextFieldComponent } from './text-field.component';
 import { Component } from '@angular/core';
