@@ -33,10 +33,7 @@
               "apps/demo/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "design/scss",
-                "libs/code/components/src/lib"
-              ]
+              "includePaths": ["design/scss", "libs/code/components/src/lib"]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -311,10 +308,7 @@
             "aot": false,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "design/scss",
-                "libs/code/components/src/lib"
-              ]
+              "includePaths": ["design/scss", "libs/code/components/src/lib"]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -449,6 +443,32 @@
             "packageJson": "libs/plugin/scully-highlight/package.json",
             "main": "libs/plugin/scully-highlight/src/index.ts",
             "assets": ["libs/plugin/scully-highlight/*.md"]
+          }
+        }
+      }
+    },
+    "util-testing": {
+      "root": "libs/util/testing",
+      "sourceRoot": "libs/util/testing/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/util/testing/tsconfig.lib.json",
+              "libs/util/testing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/util/testing/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/util/testing/jest.config.js",
+            "tsConfig": "libs/util/testing/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }

@@ -2,9 +2,6 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { OptionComponent } from './option/option.component';
-import { OptionGroupComponent } from './option-group/option-group.component';
-import { async, TestBed } from '@angular/core/testing';
-import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
 
 import { SelectComponent } from './select.component';
 import {
@@ -12,7 +9,6 @@ import {
   FormsModule,
   FormControl,
   FormGroup,
-  Validators,
 } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { createHostFactory, SpectatorHost } from '@ngneat/spectator';
