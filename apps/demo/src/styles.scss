@@ -6,6 +6,7 @@
 
 @import 'design/scss/highlight/a11y-light.scss';
 @import 'design/scss/palettes/codendesign.scss';
+@import 'upload/upload.theme.scss';
 
 $demo-primary: mat-palette($code);
 $demo-accent: mat-palette($design);
@@ -13,6 +14,8 @@ $demo-warn: mat-palette($mat-red);
 $demo-theme: mat-light-theme($demo-primary, $demo-accent, $demo-warn);
 
 @include angular-material-theme($demo-theme);
+
+@include cnd-upload-theme($demo-theme);
 
 html,
 body {

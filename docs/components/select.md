@@ -1,6 +1,6 @@
 ---
-title: select
-description: 'blog description'
+title: Select
+description: 'Select component'
 published: true
 
 ---

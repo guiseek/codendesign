@@ -6,10 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Code<%= classify(name) %>Module } from './<%= dasherize(name) %>.module';
 import { Code<%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
-const slides = [{ headline: '', src: '' }];
-const template = `<cnd-fab [slides]="slides"> </cnd-fab>`;
+const slides = [
+  { headline: 'Code 1', src: '/images/<%= dasherize(name) %>-1.svg' },
+  { headline: 'Code 2', src: '/images/<%= dasherize(name) %>-2.svg' },
+];
+
+const template = `<cnd-<%= dasherize(name) %> [slides]="slides"> </cnd-<%= dasherize(name) %>>`;
 const moduleMetadata = {
-  imports: [BrowserAnimationsModule, CodeFabModule],
+  imports: [BrowserAnimationsModule, Code<%= classify(name) %>Module],
 };
 storiesOf('Code<%= classify(name) %>', module)
   .addDecorator(withA11y)

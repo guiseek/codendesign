@@ -15,8 +15,7 @@ import {
   styleUrls: ['./demos.component.scss'],
 })
 export class DemosComponent implements OnInit, OnDestroy {
-  mobileQuery: MediaQueryList;
-  private _mobileQueryListener: () => void;
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(
@@ -31,15 +30,9 @@ export class DemosComponent implements OnInit, OnDestroy {
     public changeDetectorRef: ChangeDetectorRef,
     private breakpointObserver: BreakpointObserver
   ) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
-    // this.mobileQuery.addEventListener('change', this._mobileQueryListener);
     console.log(this.links);
   }
   ngOnInit(): void {}
   ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-    // this.mobileQuery.removeEventListener('change', this._mobileQueryListener);
   }
 }

@@ -10,7 +10,7 @@
       },
       "root": "apps/demo",
       "sourceRoot": "apps/demo/src",
-      "prefix": "cnd",
+      "prefix": "cnd-demos",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -33,7 +33,10 @@
               "apps/demo/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["design/scss"]
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -307,6 +310,12 @@
             "tsConfig": "tsconfig.playground.json",
             "aot": false,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
+            },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },

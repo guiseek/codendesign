@@ -29,7 +29,7 @@ export async function pluginScullyHighlight(
         if (!!messages.length) {
           // messages.forEach(yellow);
         }
-        return html;
+        return html.replace(/&amp;lt;/g, '&lt;').replace(/&amp;gt;/g, '&gt;');
       });
   }
 }

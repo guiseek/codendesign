@@ -1,0 +1,28 @@
+<header>
+  <h2>Step {{ selectedIndex + 1 }}/{{ steps.length }}</h2>
+</header>
+
+<div role="slider" [style.display]="selected ? 'block' : 'none'">
+  <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+</div>
+
+<footer *ngIf="controls"  class="cnd-step-controls">
+  <button cndStepperPrevious [disabled]="selectedIndex === 0">
+    <i class="material-icons">navigate_before</i>
+  </button>
+  <button
+    class="cnd-step"
+    *ngFor="let step of steps; let i = index"
+    [ngClass]="{ 'cnd-active': selectedIndex === i }"
+    (click)="onClick(i)"
+  >
+    <i class="material-icons">
+      {{
+        i === selectedIndex ? 'radio_button_checked' : 'radio_button_unchecked'
+      }}
+    </i>
+  </button>
+  <button cndStepperNext [disabled]="selectedIndex === steps.length - 1">
+    <i class="material-icons">navigate_next</i>
+  </button>
+</footer>

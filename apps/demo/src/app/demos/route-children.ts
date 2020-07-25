@@ -1,3 +1,5 @@
+import { UploadComponent } from './upload/upload.component';
+import { StepperComponent } from './stepper/stepper.component';
 import { TextFieldComponent } from './text-field/text-field.component';
 import { TableComponent } from './table/table.component';
 import { SelectComponent } from './select/select.component';
@@ -25,6 +27,10 @@ export const children: Routes = [
     component: PopoverComponent,
   },
   {
+    path: 'stepper',
+    component: StepperComponent,
+  },
+  {
     path: 'select',
     component: SelectComponent,
   },
@@ -35,5 +41,9 @@ export const children: Routes = [
   {
     path: 'text-field',
     component: TextFieldComponent,
+  },
+  {
+    path: 'upload',
+    component: UploadComponent,
   },
 ];

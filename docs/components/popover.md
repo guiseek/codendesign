@@ -1,6 +1,6 @@
 ---
-title: popover
-description: 'blog description'
+title: Popover
+description: 'Popover component'
 published: true
 
 ---
