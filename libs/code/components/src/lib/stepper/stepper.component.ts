@@ -13,24 +13,25 @@ import {
 } from '@angular/core';
 import { CdkStepper, CdkStep } from '@angular/cdk/stepper';
 import { Stepper } from './stepper.interface';
+// import { CodeStepComponent } from './step.component';
 import { takeUntil } from 'rxjs/operators';
 
-@Component({
-  selector: 'cnd-step',
-  templateUrl: './step.component.html',
-  providers: [{ provide: CdkStep, useExisting: CodeStepComponent }],
-  exportAs: 'cndStep',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class CodeStepComponent extends CdkStep {
-  constructor(
-    @Inject(forwardRef(() => CodeStepperComponent))
-    stepper: CodeStepperComponent
-  ) {
-    super(stepper);
-  }
-}
+// @Component({
+//   selector: 'cnd-step',
+//   templateUrl: './step.component.html',
+//   providers: [{ provide: CdkStep, useExisting: CodeStepComponent }],
+//   exportAs: 'cndStep',
+//   encapsulation: ViewEncapsulation.None,
+//   changeDetection: ChangeDetectionStrategy.OnPush,
+// })
+// export class CodeStepComponent extends CdkStep {
+//   constructor(
+//     @Inject(forwardRef(() => CodeStepperComponent))
+//     stepper: CodeStepperComponent
+//   ) {
+//     super(stepper);
+//   }
+// }
 
 @Component({
   selector: 'cnd-stepper',
@@ -43,16 +44,16 @@ export class CodeStepComponent extends CdkStep {
 export class CodeStepperComponent extends CdkStepper implements AfterContentInit {
   @Input() controls = true;
 
-  @ContentChildren(CodeStepComponent, { descendants: true })
-  _steps: QueryList<CodeStepComponent>;
+  // @ContentChildren(CodeStepComponent, { descendants: true })
+  // _steps: QueryList<CodeStepComponent>;
 
   @Output() stepChanged = new EventEmitter<Stepper>();
 
   ngAfterContentInit() {
-    console.log('this._steps: ', this._steps);
-    this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
-      this._stateChanged();
-    });
+    // console.log('this._steps: ', this._steps);
+    // this._steps.changes.pipe(takeUntil(this._destroyed)).subscribe(() => {
+    //   this._stateChanged();
+    // });
   }
 
   onClick(index: number): void {

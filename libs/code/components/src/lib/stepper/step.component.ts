@@ -5,22 +5,16 @@ import { CdkStep } from '@angular/cdk/stepper';
 @Component({
   selector: 'cnd-step',
   templateUrl: './step.component.html',
-  providers: [
-    { provide: CdkStep, useExisting: CodeStepComponent }
-  ],
+  providers: [{ provide: CdkStep, useExisting: CodeStepComponent }],
   exportAs: 'cndStep',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class CodeStepComponent extends CdkStep implements OnInit {
-
+export class CodeStepComponent extends CdkStep {
   constructor(
-    @Inject(forwardRef(() => CodeStepperComponent)) stepper: CodeStepperComponent
+    @Inject(forwardRef(() => CodeStepperComponent))
+    stepper: CodeStepperComponent
   ) {
-    super(stepper)
+    super(stepper);
   }
-
-  ngOnInit(): void {
-  }
-
 }

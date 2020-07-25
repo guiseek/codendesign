@@ -1,11 +1,10 @@
+import { CodeStepComponent } from './step.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CdkStepperModule } from '@angular/cdk/stepper';
-import { CodeStepperComponent, CodeStepComponent } from './stepper.component';
-import {
-  CodeStepperNext,
-  CodeStepperPrevious,
-} from './stepper-button.directive';
+import { CodeStepperComponent } from './stepper.component';
+import { CodeStepperPrevious } from './stepper-previous.directive';
+import { CodeStepperNext } from './stepper-next.directive';
 
 @NgModule({
   declarations: [
