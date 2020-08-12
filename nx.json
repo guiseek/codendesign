@@ -53,6 +53,12 @@
     },
     "plugin-scully-highlight": {
       "tags": []
+    },
+    "util-testing": {
+      "tags": ["type:util"]
+    },
+    "pocs-elements": {
+      "tags": []
     }
   }
 }

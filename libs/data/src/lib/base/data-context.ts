@@ -17,7 +17,7 @@ export class DataContext {
         ) {
           for (const item of dataSource.entities) {
             let entity: AbstractEntity;
-            let target: string;
+           let target: string;
 
             if (item instanceof AbstractEntity) {
               entity = item as AbstractEntity;

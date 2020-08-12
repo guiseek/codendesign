@@ -3,6 +3,7 @@ module.exports = {
     { value: 'code', name: 'code:     Alterações de CÓDIGO do projeto, que não \n            seja imagens, scss/temas, specs/tokens' },
     { value: 'design', name: 'design:   Alterações de DESIGN do projeto, como \n            imagens, scss/temas, specs/tokens' },
     { value: 'feat', name: 'feat:     Nova funcionalidade de código ou design' },
+    { value: 'poc', name: 'poc:      Prova de conceito adicionada ou alterada' },
     { value: 'fix', name: 'fix:      Correção de bug em código ou design' },
     { value: 'docs', name: 'docs:     Apenas documentações foram alteradas' },
     { value: 'style', name: 'style:    Alterações que não afetam a semântica do código\n            (espaços, formatação, pontuações faltando, etc)', },
@@ -17,6 +18,7 @@ module.exports = {
 
   scopes: [
     { name: 'components', description: 'Algum dos componentes foi alterado' },
+    { name: 'elements', description: 'Custom Elements alterados' },
     { name: 'core', description: 'Core lib foi alterada' },
     { name: 'data', description: 'Data lib foi alterada' },
     { name: 'demo', description: 'Demo app foi alterado' },

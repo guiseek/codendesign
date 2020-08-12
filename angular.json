@@ -33,10 +33,7 @@
               "apps/demo/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "design/scss",
-                "libs/code/components/src/lib"
-              ]
+              "includePaths": ["design/scss", "libs/code/components/src/lib"]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -311,10 +308,7 @@
             "aot": false,
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "design/scss",
-                "libs/code/components/src/lib"
-              ]
+              "includePaths": ["design/scss", "libs/code/components/src/lib"]
             },
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
@@ -449,6 +443,128 @@
             "packageJson": "libs/plugin/scully-highlight/package.json",
             "main": "libs/plugin/scully-highlight/src/index.ts",
             "assets": ["libs/plugin/scully-highlight/*.md"]
+          }
+        }
+      }
+    },
+    "util-testing": {
+      "root": "libs/util/testing",
+      "sourceRoot": "libs/util/testing/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/util/testing/tsconfig.lib.json",
+              "libs/util/testing/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/util/testing/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/util/testing/jest.config.js",
+            "tsConfig": "libs/util/testing/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "pocs-elements": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/pocs/elements",
+      "sourceRoot": "apps/pocs/elements/src",
+      "prefix": "cnd",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pocs/elements",
+            "index": "apps/pocs/elements/src/index.html",
+            "main": "apps/pocs/elements/src/main.ts",
+            "polyfills": "apps/pocs/elements/src/polyfills.ts",
+            "tsConfig": "apps/pocs/elements/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/pocs/elements/src/favicon.ico",
+              "apps/pocs/elements/src/assets"
+            ],
+            "styles": ["apps/pocs/elements/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pocs/elements/src/environments/environment.ts",
+                  "with": "apps/pocs/elements/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pocs-elements:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pocs-elements:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pocs-elements:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pocs/elements/tsconfig.app.json",
+              "apps/pocs/elements/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/pocs/elements/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/pocs/elements/jest.config.js",
+            "tsConfig": "apps/pocs/elements/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/pocs/elements/src/test-setup.ts"
           }
         }
       }
