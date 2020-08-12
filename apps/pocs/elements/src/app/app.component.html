@@ -1,0 +1,19 @@
+<div class="app" [style.backgroundColor]="active ? 'silver' : 'white'" style="border: 2px solid black; padding: 20px;">
+  <table>
+    <tr>
+      <td class="label">Id</td>
+      <td>{{info?.id}}</td>
+    </tr>
+    <tr>
+        <td class="label">Name</td>
+        <td>{{info?.name}}</td>
+    </tr>
+    <tr>
+        <td class="label">Date</td>
+        <td>{{info?.date }}</td>
+    </tr>
+  </table>
+  <button (click)="toggle()" [disabled]="active">Select</button>
+  <button (click)="toggle()" [disabled]="!active">Remove</button>
+
+</div>

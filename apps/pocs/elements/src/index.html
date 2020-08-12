@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>PocsElements</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body is="app-info">
+    <!-- <cnd-root></cnd-root> -->
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+
+        const app = document.querySelector('body');
+        app.info = { id: 1, name: 'CND', date: new Date().toLocaleDateString() };
+        app.addEventListener('change', (e) => console.debug('event', e));
+
+      });
+
+    </script>
+  </body>
+</html>
