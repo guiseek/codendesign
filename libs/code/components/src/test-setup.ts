@@ -1,4 +1,2 @@
 import 'jest-preset-angular';
-Object.defineProperty(window, 'DragEvent', {
-  value: class DragEvent {}
-});
+import '@cnd/util/testing';
