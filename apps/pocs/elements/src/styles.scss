@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -9,4 +10,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.app {
+  padding: 20px;
+  border: 2px solid black;
+  background-color: white;
+  &:not(.active) {
+    background-color: gray;
+    color: silver;
+  }
 }

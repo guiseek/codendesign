@@ -34,9 +34,14 @@
               "apps/demo/src/assets"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["design/scss", "libs/code/components/src/lib"]
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
             },
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -94,7 +99,10 @@
               "apps/demo/tsconfig.app.json",
               "apps/demo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/demo/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo/**/*"
+            ]
           }
         },
         "test": {
@@ -133,8 +141,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/demo-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-e2e/**/*"]
+            "tsConfig": [
+              "apps/demo-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/demo-e2e/**/*"
+            ]
           }
         }
       }
@@ -164,7 +177,10 @@
               "libs/core/tsconfig.lib.json",
               "libs/core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/core/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/core/**/*"
+            ]
           }
         },
         "test": {
@@ -204,7 +220,10 @@
               "libs/data/tsconfig.lib.json",
               "libs/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/data/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/data/**/*"
+            ]
           }
         },
         "test": {
@@ -244,7 +263,10 @@
               "libs/code/components/tsconfig.lib.json",
               "libs/code/components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/code/components/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/code/components/**/*"
+            ]
           }
         },
         "test": {
@@ -307,11 +329,19 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "tsconfig.playground.json",
             "aot": false,
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
+            ],
             "stylePreprocessorOptions": {
-              "includePaths": ["design/scss", "libs/code/components/src/lib"]
+              "includePaths": [
+                "design/scss",
+                "libs/code/components/src/lib"
+              ]
             },
-            "styles": ["apps/demo/src/styles.scss"],
+            "styles": [
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -367,7 +397,10 @@
               "libs/domain/tsconfig.lib.json",
               "libs/domain/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/domain/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/domain/**/*"
+            ]
           }
         },
         "test": {
@@ -403,8 +436,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/code-components-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/code-components-e2e/**/*"]
+            "tsConfig": [
+              "apps/code-components-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/code-components-e2e/**/*"
+            ]
           }
         }
       }
@@ -443,7 +481,9 @@
             "tsConfig": "libs/plugin/scully-highlight/tsconfig.lib.json",
             "packageJson": "libs/plugin/scully-highlight/package.json",
             "main": "libs/plugin/scully-highlight/src/index.ts",
-            "assets": ["libs/plugin/scully-highlight/*.md"]
+            "assets": [
+              "libs/plugin/scully-highlight/*.md"
+            ]
           }
         }
       }
@@ -461,7 +501,10 @@
               "libs/util/testing/tsconfig.lib.json",
               "libs/util/testing/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/util/testing/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/util/testing/**/*"
+            ]
           }
         },
         "test": {
@@ -498,7 +541,9 @@
               "apps/pocs/elements/src/favicon.ico",
               "apps/pocs/elements/src/assets"
             ],
-            "styles": ["apps/pocs/elements/src/styles.scss"],
+            "styles": [
+              "apps/pocs/elements/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -510,7 +555,7 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -556,7 +601,10 @@
               "apps/pocs/elements/tsconfig.app.json",
               "apps/pocs/elements/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/pocs/elements/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/pocs/elements/**/*"
+            ]
           }
         },
         "test": {
@@ -566,6 +614,12 @@
             "tsConfig": "apps/pocs/elements/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "apps/pocs/elements/src/test-setup.ts"
+          }
+        },
+        "Deploy": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "npm run pocs-elements:single-build"
           }
         }
       }

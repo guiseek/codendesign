@@ -48,19 +48,4 @@ export class AppInfoElement extends HTMLBodyElement {
   static get observedAttributes() {
     return ['info', 'active'];
   }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    console.dir('attributeChangedCallback', {
-      name, oldValue, newValue
-    });
-    switch (name) {
-      case 'active':
-        return this.active = newValue === 'true';
-      case 'info':
-        // Normalmente, propriedades complexas não são mapeadas
-        // para atributos. Isso é apenas para demonstração
-        // finalidades.
-        return this.info = JSON.parse(newValue);
-    }
-  }
 }
